@@ -1,0 +1,39 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Medicare Mental Health Patients per 1,000 Population by Age and Sex (2023–24)",
+    "fontSize": 14,
+    "fontWeight": "bold",
+    "anchor": "middle"
+  },
+  "width": 550,
+  "height": 320,
+  "data": {"url": "data/medicare_age_sex_2023_24.csv"},
+  "mark": "bar",
+  "encoding": {
+    "y": {
+      "field": "AgeGroup",
+      "type": "ordinal",
+      "title": "Age Group",
+      "sort": ["0-4 years","5-11 years","12-17 years","18-24 years","25-34 years",
+               "35-44 years","45-54 years","55-64 years","65-74 years","75-84 years","85 years and over"]
+    },
+    "x": {
+      "field": "patient_rate_per_1000",
+      "type": "quantitative",
+      "title": "Patients per 1,000 population"
+    },
+    "color": {
+      "field": "Sex",
+      "type": "nominal",
+      "scale": {"domain": ["Female", "Male"], "range": ["#d6604d", "#4393c3"]},
+      "legend": {"title": "Sex"}
+    },
+    "xOffset": {"field": "Sex", "type": "nominal"},
+    "tooltip": [
+      {"field": "AgeGroup", "type": "ordinal", "title": "Age Group"},
+      {"field": "Sex", "type": "nominal", "title": "Sex"},
+      {"field": "patient_rate_per_1000", "type": "quantitative", "title": "Rate per 1,000"}
+    ]
+  }
+}

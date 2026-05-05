@@ -1,0 +1,43 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Medicare Mental Health Services, Australia 2014–2024",
+    "fontSize": 14,
+    "fontWeight": "bold"
+  },
+  "width": 650,
+  "height": 300,
+  "data": {
+    "values": [
+      {"year": "2014-15", "services": 9200000},
+      {"year": "2015-16", "services": 9800000},
+      {"year": "2016-17", "services": 10400000},
+      {"year": "2017-18", "services": 11100000},
+      {"year": "2018-19", "services": 11900000},
+      {"year": "2019-20", "services": 12300000},
+      {"year": "2020-21", "services": 13100000},
+      {"year": "2021-22", "services": 14200000},
+      {"year": "2022-23", "services": 15100000},
+      {"year": "2023-24", "services": 12600000}
+    ]
+  },
+  "mark": {"type": "line", "point": true, "color": "#1a3a5c"},
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "title": "Financial Year",
+      "axis": {"labelAngle": -45}
+    },
+    "y": {
+      "field": "services",
+      "type": "quantitative",
+      "title": "Number of Services",
+      "axis": {"format": "~s"}
+    },
+    "tooltip": [
+      {"field": "year", "title": "Year"},
+      {"field": "services", "title": "Services", "format": ","}
+    ]
+  }
+}

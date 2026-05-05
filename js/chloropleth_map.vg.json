@@ -1,0 +1,44 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Medicare Mental Health Patients per 1,000 Population by State (2023–24)",
+    "fontSize": 14,
+    "fontWeight": "bold",
+    "anchor": "middle"
+  },
+  "width": 750,
+  "height": 450,
+  "projection": {"type": "mercator"},
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/4_australia_map/js/ausStates.topojson",
+        "format": {"type": "topojson", "feature": "ausStates"}
+      },
+      "transform": [
+        {
+          "lookup": "properties.STATE_NAME",
+          "from": {
+            "data": {"url": "data/medicare_by_state.csv"},
+            "key": "state",
+            "fields": ["patient_rate_per_1000", "total_patients"]
+          }
+        }
+      ],
+      "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 1},
+      "encoding": {
+        "color": {
+          "field": "patient_rate_per_1000",
+          "type": "quantitative",
+          "scale": {"scheme": "blues", "domain": [50, 115]},
+          "legend": {"title": "Patients per 1,000 population"}
+        },
+        "tooltip": [
+          {"field": "properties.STATE_NAME", "type": "nominal", "title": "State"},
+          {"field": "patient_rate_per_1000", "type": "quantitative", "title": "Rate per 1,000"},
+          {"field": "total_patients", "type": "quantitative", "title": "Total patients", "format": ","}
+        ]
+      }
+    }
+  ]
+}

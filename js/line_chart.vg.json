@@ -1,0 +1,44 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Medicare Mental Health Patients per 1,000 Population, Australia (2014–2024)",
+    "fontSize": 14,
+    "fontWeight": "bold",
+    "anchor": "middle"
+  },
+  "width": 650,
+  "height": 300,
+  "data": {"url": "data/medicare_trend_2014_2024.csv"},
+  "layer": [
+    {
+      "mark": {"type": "line", "point": true, "color": "#2166ac", "strokeWidth": 2.5},
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "title": "Financial Year",
+          "axis": {"labelAngle": -45}
+        },
+        "y": {
+          "field": "patient_rate_per_1000",
+          "type": "quantitative",
+          "title": "Patients per 1,000 population",
+          "scale": {"domain": [80, 120]}
+        },
+        "tooltip": [
+          {"field": "year", "type": "ordinal", "title": "Year"},
+          {"field": "patient_rate_per_1000", "type": "quantitative", "title": "Rate per 1,000"},
+          {"field": "total_patients", "type": "quantitative", "title": "Total patients", "format": ","}
+        ]
+      }
+    },
+    {
+      "mark": {"type": "text", "dy": -10, "color": "#2166ac", "fontSize": 10},
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal"},
+        "y": {"field": "patient_rate_per_1000", "type": "quantitative"},
+        "text": {"field": "patient_rate_per_1000", "type": "quantitative"}
+      }
+    }
+  ]
+}
