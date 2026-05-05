@@ -1,0 +1,32 @@
+phn_code,phn_name,patient_rate_per_1000
+PHN-101,Central and Eastern Sydney,103
+PHN-102,Northern Sydney,109
+PHN-103,Western Sydney,82
+PHN-104,Nepean Blue Mountains,115
+PHN-105,South Western Sydney,86
+PHN-106,South Eastern NSW,113
+PHN-107,Western NSW,83
+PHN-108,Hunter New England and Central Coast,107
+PHN-109,North Coast,124
+PHN-110,Murrumbidgee,86
+PHN-201,North Western Melbourne,109
+PHN-202,Eastern Melbourne,109
+PHN-203,South Eastern Melbourne,114
+PHN-204,Gippsland,106
+PHN-205,Murray,98
+PHN-206,Western Victoria,113
+PHN-301,Brisbane North,109
+PHN-302,Brisbane South,102
+PHN-303,Gold Coast,120
+PHN-304,Darling Downs and West Moreton,100
+PHN-305,Western Queensland,54
+PHN-306,"Central Queensland, Wide Bay, Sunshine Coast",100
+PHN-307,Northern Queensland,87
+PHN-401,Adelaide,98
+PHN-402,Country SA,82
+PHN-501,Perth North,102
+PHN-502,Perth South,92
+PHN-503,Country WA,75
+PHN-601,Tasmania,93
+PHN-701,Northern Territory,46
+PHN-801,Australian Capital Territory,92
