@@ -12,12 +12,15 @@
   "layer": [
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/4_australia_map/js/ausStates.topojson",
-        "format": {"type": "topojson", "feature": "ausStates"}
+        "url": "js/ne_50m_admin_1_states_provinces.json",
+        "format": {
+          "type": "topojson",
+          "feature": "ne_50m_admin_1_states_provinces"
+        }
       },
       "transform": [
         {
-          "lookup": "properties.STATE_NAME",
+          "lookup": "properties.name",
           "from": {
             "data": {"url": "data/medicare_by_state.csv"},
             "key": "state",
@@ -30,11 +33,11 @@
         "color": {
           "field": "patient_rate_per_1000",
           "type": "quantitative",
-          "scale": {"scheme": "blues", "domain": [50, 115]},
+          "scale": {"scheme": "blues"},
           "legend": {"title": "Patients per 1,000 population"}
         },
         "tooltip": [
-          {"field": "properties.STATE_NAME", "type": "nominal", "title": "State"},
+          {"field": "properties.name", "type": "nominal", "title": "State"},
           {"field": "patient_rate_per_1000", "type": "quantitative", "title": "Rate per 1,000"},
           {"field": "total_patients", "type": "quantitative", "title": "Total patients", "format": ","}
         ]
