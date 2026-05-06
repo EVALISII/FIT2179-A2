@@ -1,18 +1,18 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Medicare Mental Health Patients per 1,000 Population by State (2023–24)",
+    "text": "Medicare Mental Health Patients per 1,000 Population by State (2023-24)",
     "fontSize": 14,
     "fontWeight": "bold",
     "anchor": "middle"
   },
   "width": 750,
   "height": 450,
-  "projection": {"type": "mercator"},
+  "projection": {"type": "equirectangular"},
   "layer": [
     {
       "data": {
-        "url": "js/ne_50m_admin_1_states_provinces.json",
+        "url": "data/medicare_by_state.csv",
         "format": {
           "type": "topojson",
           "feature": "ne_50m_admin_1_states_provinces"
