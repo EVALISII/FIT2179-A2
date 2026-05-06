@@ -12,7 +12,7 @@
   "layer": [
     {
       "data": {
-        "url": "data/medicare_by_state.csv",
+        "url": "https://evalisii.github.io/FIT2179-A2/js/ne_50m_admin_1_states_provinces.json",
         "format": {
           "type": "topojson",
           "feature": "ne_50m_admin_1_states_provinces"
@@ -22,7 +22,7 @@
         {
           "lookup": "properties.name",
           "from": {
-            "data": {"url": "data/medicare_by_state.csv"},
+            "data": {"url": "https://evalisii.github.io/FIT2179-A2/data/medicare_by_state.csv"},
             "key": "state",
             "fields": ["patient_rate_per_1000", "total_patients"]
           }
