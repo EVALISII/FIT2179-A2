@@ -1,33 +1,43 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "title": {
-    "text": "Medicare Mental Health Patients per 1,000 Population by Age and Sex (2023–24)",
-    "fontSize": 14,
+    "text": "Medicare Mental Health Patient Rates by Age Group and Sex (2023-24)",
+    "fontSize": 15,
     "fontWeight": "bold",
-    "anchor": "middle"
+    "font": "Times New Roman",
+    "anchor": "middle",
+    "color": "#252525"
   },
   "width": 550,
-  "height": 320,
-  "data": {"url": "data/medicare_age_sex_2023_24.csv"},
-  "mark": "bar",
+  "height": 340,
+  "data": {"url": "https://evalisii.github.io/FIT2179-A2/data/medicare_age_sex_2023_24.csv"},
+  "mark": {"type": "bar", "cornerRadiusEnd": 2},
   "encoding": {
     "y": {
       "field": "AgeGroup",
       "type": "ordinal",
       "title": "Age Group",
-      "sort": ["0-4 years","5-11 years","12-17 years","18-24 years","25-34 years",
-               "35-44 years","45-54 years","55-64 years","65-74 years","75-84 years","85 years and over"]
+      "sort": ["0-4 years","5-11 years","12-17 years","18-24 years","25-34 years","35-44 years","45-54 years","55-64 years","65-74 years","75-84 years","85 years and over"],
+      "axis": {"labelFont": "Times New Roman", "titleFont": "Times New Roman"}
     },
     "x": {
       "field": "patient_rate_per_1000",
       "type": "quantitative",
-      "title": "Patients per 1,000 population"
+      "title": "Patients per 1,000 population",
+      "axis": {"labelFont": "Times New Roman", "titleFont": "Times New Roman"}
     },
     "color": {
       "field": "Sex",
       "type": "nominal",
-      "scale": {"domain": ["Female", "Male"], "range": ["#d6604d", "#4393c3"]},
-      "legend": {"title": "Sex"}
+      "scale": {
+        "domain": ["Female", "Male"],
+        "range": ["#2166ac", "#92c5de"]
+      },
+      "legend": {
+        "title": "Sex",
+        "titleFont": "Times New Roman",
+        "labelFont": "Times New Roman"
+      }
     },
     "xOffset": {"field": "Sex", "type": "nominal"},
     "tooltip": [
@@ -35,5 +45,9 @@
       {"field": "Sex", "type": "nominal", "title": "Sex"},
       {"field": "patient_rate_per_1000", "type": "quantitative", "title": "Rate per 1,000"}
     ]
+  },
+  "config": {
+    "background": "transparent",
+    "view": {"stroke": null}
   }
 }
