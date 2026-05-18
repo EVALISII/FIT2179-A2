@@ -4,7 +4,7 @@
     "text": "Medicare Mental Health Patients per 1,000 Population, Australia (2014-2024)",
     "fontSize": 15,
     "fontWeight": "bold",
-    "font": "Georgia",
+    "font": "Times New Roman",
     "anchor": "middle",
     "color": "#ffffff"
   },
@@ -22,8 +22,8 @@
           "title": "Financial Year",
           "axis": {
             "labelAngle": -45,
-            "labelFont": "Georgia",
-            "titleFont": "Georgia",
+            "labelFont": "Times New Roman",
+            "titleFont": "Times New Roman",
             "labelColor": "#c5cfe0",
             "titleColor": "#c5cfe0",
             "gridColor": "#4a6080",
@@ -37,8 +37,8 @@
           "title": "Patients per 1,000 population",
           "scale": {"domain": [80, 120]},
           "axis": {
-            "labelFont": "Georgia",
-            "titleFont": "Georgia",
+            "labelFont": "Times New Roman",
+            "titleFont": "Times New Roman",
             "labelColor": "#c5cfe0",
             "titleColor": "#c5cfe0",
             "gridColor": "#4a6080",
@@ -71,7 +71,7 @@
       }
     },
     {
-      "mark": {"type": "text", "align": "left", "dx": 5, "dy": -8, "color": "#d6604d", "font": "Georgia", "fontSize": 11},
+      "mark": {"type": "text", "align": "left", "dx": 5, "dy": -8, "color": "#d6604d", "font": "Times New Roman", "fontSize": 11},
       "encoding": {
         "x": {"datum": "2020-21"},
         "y": {"datum": 112},
