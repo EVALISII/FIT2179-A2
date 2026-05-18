@@ -1,49 +1,134 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "title": {
-    "text": "Medicare Mental Health Patients vs Emergency Department Presentations (2014-2024)",
-    "fontSize": 14,
+    "text": "Medicare Patients vs Emergency Department Presentations (2014-2024)",
+    "fontSize": 15,
     "fontWeight": "bold",
-    "anchor": "middle"
+    "font": "Georgia",
+    "anchor": "middle",
+    "color": "#ffffff"
   },
   "width": 650,
   "height": 340,
-  "data": {"url": "https://evalisii.github.io/FIT2179-A2/data/medicare_vs_ed_trend.csv"},
+  "data": {
+    "url": "https://evalisii.github.io/FIT2179-A2/data/medicare_vs_ed_trend.csv"
+  },
   "layer": [
     {
-      "mark": {"type": "line", "point": true, "color": "#2166ac", "strokeWidth": 2.5},
+      "mark": {
+        "type": "line",
+        "color": "#2166ac",
+        "strokeWidth": 2.5,
+        "point": {
+          "color": "#2166ac",
+          "filled": true
+        }
+      },
       "encoding": {
         "x": {
           "field": "year",
           "type": "ordinal",
           "title": "Financial Year",
-          "axis": {"labelAngle": -45}
+          "axis": {
+            "labelAngle": -45,
+            "labelFont": "Georgia",
+            "titleFont": "Georgia"
+          }
         },
         "y": {
           "field": "total_patients",
           "type": "quantitative",
           "title": "Medicare Mental Health Patients",
-          "axis": {"titleColor": "#2166ac", "format": "~s"}
+          "axis": {
+            "titleColor": "#2166ac",
+            "format": "~s",
+            "labelFont": "Georgia",
+            "titleFont": "Georgia"
+          }
         },
         "tooltip": [
-          {"field": "year", "type": "ordinal", "title": "Year"},
-          {"field": "total_patients", "type": "quantitative", "title": "Medicare Patients", "format": ","},
-          {"field": "ed_presentations", "type": "quantitative", "title": "ED Presentations", "format": ","}
+          {
+            "field": "year",
+            "type": "ordinal",
+            "title": "Year"
+          },
+          {
+            "field": "total_patients",
+            "type": "quantitative",
+            "title": "Medicare Patients",
+            "format": ","
+          },
+          {
+            "field": "ed_presentations",
+            "type": "quantitative",
+            "title": "ED Presentations",
+            "format": ","
+          }
         ]
       }
     },
     {
-      "mark": {"type": "line", "point": true, "color": "#d6604d", "strokeWidth": 2.5, "strokeDash": [6, 3]},
+      "mark": {
+        "type": "line",
+        "color": "#d6604d",
+        "strokeWidth": 2.5,
+        "strokeDash": [
+          6,
+          3
+        ],
+        "point": {
+          "color": "#d6604d",
+          "filled": true
+        }
+      },
       "encoding": {
-        "x": {"field": "year", "type": "ordinal"},
+        "x": {
+          "field": "year",
+          "type": "ordinal"
+        },
         "y": {
           "field": "ed_presentations",
           "type": "quantitative",
           "title": "ED Mental Health Presentations",
-          "axis": {"titleColor": "#d6604d", "format": "~s"}
+          "axis": {
+            "titleColor": "#d6604d",
+            "format": "~s",
+            "labelFont": "Georgia",
+            "titleFont": "Georgia"
+          }
         }
       }
     }
   ],
-  "resolve": {"scale": {"y": "independent"}}
+  "resolve": {
+    "scale": {
+      "y": "independent"
+    }
+  },
+  "config": {
+    "background": "transparent",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#c5cfe0",
+      "titleColor": "#c5cfe0",
+      "gridColor": "#4a6080",
+      "tickColor": "#4a6080",
+      "domainColor": "#4a6080",
+      "labelFont": "Georgia",
+      "titleFont": "Georgia"
+    },
+    "legend": {
+      "labelColor": "#c5cfe0",
+      "titleColor": "#c5cfe0",
+      "labelFont": "Georgia",
+      "titleFont": "Georgia"
+    },
+    "title": {
+      "color": "#ffffff",
+      "font": "Georgia"
+    }
+  },
+  "background": "transparent"
 }
