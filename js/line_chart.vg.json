@@ -1,44 +1,85 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "title": {
-    "text": "Medicare Mental Health Patients per 1,000 Population, Australia (2014–2024)",
-    "fontSize": 14,
+    "text": "Medicare Mental Health Patients per 1,000 Population, Australia (2014-2024)",
+    "fontSize": 15,
     "fontWeight": "bold",
-    "anchor": "middle"
+    "font": "Georgia",
+    "anchor": "middle",
+    "color": "#ffffff"
   },
   "width": 650,
   "height": 300,
-  "data": {"url": "data/medicare_trend_2014_2024.csv"},
+  "background": "#1e2d4a",
+  "data": {"url": "https://evalisii.github.io/FIT2179-A2/data/medicare_trend_2014_2024.csv"},
   "layer": [
     {
-      "mark": {"type": "line", "point": true, "color": "#2166ac", "strokeWidth": 2.5},
+      "mark": {"type": "line", "color": "#92c5de", "strokeWidth": 2.5},
       "encoding": {
         "x": {
           "field": "year",
           "type": "ordinal",
           "title": "Financial Year",
-          "axis": {"labelAngle": -45}
+          "axis": {
+            "labelAngle": -45,
+            "labelFont": "Georgia",
+            "titleFont": "Georgia",
+            "labelColor": "#c5cfe0",
+            "titleColor": "#c5cfe0",
+            "gridColor": "#4a6080",
+            "tickColor": "#4a6080",
+            "domainColor": "#4a6080"
+          }
         },
         "y": {
           "field": "patient_rate_per_1000",
           "type": "quantitative",
           "title": "Patients per 1,000 population",
+          "scale": {"domain": [80, 120]},
+          "axis": {
+            "labelFont": "Georgia",
+            "titleFont": "Georgia",
+            "labelColor": "#c5cfe0",
+            "titleColor": "#c5cfe0",
+            "gridColor": "#4a6080",
+            "tickColor": "#4a6080",
+            "domainColor": "#4a6080"
+          }
+        }
+      }
+    },
+    {
+      "mark": {"type": "point", "color": "#92c5de", "filled": true, "size": 60},
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal"},
+        "y": {
+          "field": "patient_rate_per_1000",
+          "type": "quantitative",
           "scale": {"domain": [80, 120]}
         },
         "tooltip": [
           {"field": "year", "type": "ordinal", "title": "Year"},
           {"field": "patient_rate_per_1000", "type": "quantitative", "title": "Rate per 1,000"},
-          {"field": "total_patients", "type": "quantitative", "title": "Total patients", "format": ","}
+          {"field": "total_patients", "type": "quantitative", "title": "Total Patients", "format": ","}
         ]
       }
     },
     {
-      "mark": {"type": "text", "dy": -10, "color": "#2166ac", "fontSize": 10},
+      "mark": {"type": "rule", "color": "#d6604d", "strokeDash": [6, 3], "strokeWidth": 1.5},
       "encoding": {
-        "x": {"field": "year", "type": "ordinal"},
-        "y": {"field": "patient_rate_per_1000", "type": "quantitative"},
-        "text": {"field": "patient_rate_per_1000", "type": "quantitative"}
+        "y": {"datum": 112}
+      }
+    },
+    {
+      "mark": {"type": "text", "align": "left", "dx": 5, "dy": -8, "color": "#d6604d", "font": "Georgia", "fontSize": 11},
+      "encoding": {
+        "x": {"datum": "2020-21"},
+        "y": {"datum": 112},
+        "text": {"value": "COVID-19 peak: 112 per 1,000"}
       }
     }
-  ]
+  ],
+  "config": {
+    "view": {"stroke": null}
+  }
 }
