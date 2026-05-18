@@ -1,12 +1,14 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "title": {
-    "text": "Mental Health Expenditure by Funding Source (2014-2024, $million)",
-    "fontSize": 14,
+    "text": "Mental Health Expenditure by Funding Source (2014-2024)",
+    "fontSize": 15,
     "fontWeight": "bold",
-    "anchor": "middle"
+    "font": "Georgia",
+    "anchor": "middle",
+    "color": "#ffffff"
   },
-  "width": 600,
+  "width": 620,
   "height": 300,
   "data": {
     "url": "https://evalisii.github.io/FIT2179-A2/data/expenditure_funding.csv"
@@ -20,7 +22,9 @@
       "type": "ordinal",
       "title": "Financial Year",
       "axis": {
-        "labelAngle": -45
+        "labelAngle": -45,
+        "labelFont": "Georgia",
+        "titleFont": "Georgia"
       }
     },
     "y": {
@@ -28,7 +32,9 @@
       "type": "quantitative",
       "title": "Expenditure ($million)",
       "axis": {
-        "format": "~s"
+        "format": "~s",
+        "labelFont": "Georgia",
+        "titleFont": "Georgia"
       }
     },
     "color": {
@@ -43,9 +49,13 @@
         ],
         "range": [
           "#2166ac",
-          "#4dac26",
-          "#d6604d"
+          "#4393c3",
+          "#92c5de"
         ]
+      },
+      "legend": {
+        "titleFont": "Georgia",
+        "labelFont": "Georgia"
       }
     },
     "tooltip": [
@@ -66,5 +76,31 @@
         "format": ",.0f"
       }
     ]
-  }
+  },
+  "config": {
+    "background": "transparent",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#c5cfe0",
+      "titleColor": "#c5cfe0",
+      "gridColor": "#4a6080",
+      "tickColor": "#4a6080",
+      "domainColor": "#4a6080",
+      "labelFont": "Georgia",
+      "titleFont": "Georgia"
+    },
+    "legend": {
+      "labelColor": "#c5cfe0",
+      "titleColor": "#c5cfe0",
+      "labelFont": "Georgia",
+      "titleFont": "Georgia"
+    },
+    "title": {
+      "color": "#ffffff",
+      "font": "Georgia"
+    }
+  },
+  "background": "transparent"
 }
