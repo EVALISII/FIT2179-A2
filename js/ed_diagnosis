@@ -1,0 +1,99 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Mental Health ED Presentations by Diagnosis Type (2023-24)",
+    "fontSize": 15,
+    "fontWeight": "bold",
+    "font": "Georgia",
+    "anchor": "middle",
+    "color": "#ffffff"
+  },
+  "width": 500,
+  "height": 280,
+  "data": {
+    "url": "https://evalisii.github.io/FIT2179-A2/data/ed_diagnosis_2023_24.csv"
+  },
+  "mark": {
+    "type": "bar",
+    "cornerRadiusEnd": 3
+  },
+  "encoding": {
+    "y": {
+      "field": "diagnosis",
+      "type": "ordinal",
+      "title": null,
+      "sort": "-x",
+      "axis": {
+        "labelFont": "Georgia"
+      }
+    },
+    "x": {
+      "field": "presentations_2023_24",
+      "type": "quantitative",
+      "title": "Number of Presentations",
+      "axis": {
+        "format": "~s",
+        "labelFont": "Georgia",
+        "titleFont": "Georgia"
+      }
+    },
+    "color": {
+      "field": "presentations_2023_24",
+      "type": "quantitative",
+      "scale": {
+        "type": "threshold",
+        "domain": [
+          10000,
+          40000,
+          70000
+        ],
+        "range": [
+          "#fddbc7",
+          "#f4a582",
+          "#d6604d",
+          "#b2182b"
+        ]
+      },
+      "legend": null
+    },
+    "tooltip": [
+      {
+        "field": "diagnosis",
+        "type": "nominal",
+        "title": "Diagnosis"
+      },
+      {
+        "field": "presentations_2023_24",
+        "type": "quantitative",
+        "title": "Presentations",
+        "format": ","
+      }
+    ]
+  },
+  "config": {
+    "background": "transparent",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#c5cfe0",
+      "titleColor": "#c5cfe0",
+      "gridColor": "#4a6080",
+      "tickColor": "#4a6080",
+      "domainColor": "#4a6080",
+      "labelFont": "Georgia",
+      "titleFont": "Georgia"
+    },
+    "legend": {
+      "labelColor": "#c5cfe0",
+      "titleColor": "#c5cfe0",
+      "labelFont": "Georgia",
+      "titleFont": "Georgia"
+    },
+    "title": {
+      "color": "#ffffff",
+      "font": "Georgia"
+    }
+  },
+  "background": "transparent"
+}

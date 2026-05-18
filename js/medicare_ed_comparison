@@ -1,0 +1,49 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Medicare Mental Health Patients vs Emergency Department Presentations (2014-2024)",
+    "fontSize": 14,
+    "fontWeight": "bold",
+    "anchor": "middle"
+  },
+  "width": 650,
+  "height": 340,
+  "data": {"url": "https://evalisii.github.io/FIT2179-A2/data/medicare_vs_ed_trend.csv"},
+  "layer": [
+    {
+      "mark": {"type": "line", "point": true, "color": "#2166ac", "strokeWidth": 2.5},
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "title": "Financial Year",
+          "axis": {"labelAngle": -45}
+        },
+        "y": {
+          "field": "total_patients",
+          "type": "quantitative",
+          "title": "Medicare Mental Health Patients",
+          "axis": {"titleColor": "#2166ac", "format": "~s"}
+        },
+        "tooltip": [
+          {"field": "year", "type": "ordinal", "title": "Year"},
+          {"field": "total_patients", "type": "quantitative", "title": "Medicare Patients", "format": ","},
+          {"field": "ed_presentations", "type": "quantitative", "title": "ED Presentations", "format": ","}
+        ]
+      }
+    },
+    {
+      "mark": {"type": "line", "point": true, "color": "#d6604d", "strokeWidth": 2.5, "strokeDash": [6, 3]},
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal"},
+        "y": {
+          "field": "ed_presentations",
+          "type": "quantitative",
+          "title": "ED Mental Health Presentations",
+          "axis": {"titleColor": "#d6604d", "format": "~s"}
+        }
+      }
+    }
+  ],
+  "resolve": {"scale": {"y": "independent"}}
+}

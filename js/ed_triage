@@ -1,0 +1,111 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Mental Health Emergency Department Presentations by Urgency (2014-2024)",
+    "fontSize": 15,
+    "fontWeight": "bold",
+    "font": "Georgia",
+    "anchor": "middle",
+    "color": "#ffffff"
+  },
+  "width": 650,
+  "height": 320,
+  "data": {
+    "url": "https://evalisii.github.io/FIT2179-A2/data/ed_triage_trend.csv"
+  },
+  "mark": {
+    "type": "area"
+  },
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "title": "Financial Year",
+      "axis": {
+        "labelAngle": -45,
+        "labelFont": "Georgia",
+        "titleFont": "Georgia"
+      }
+    },
+    "y": {
+      "field": "presentations",
+      "type": "quantitative",
+      "title": "Number of Presentations",
+      "axis": {
+        "format": "~s",
+        "labelFont": "Georgia",
+        "titleFont": "Georgia"
+      },
+      "stack": "normalize"
+    },
+    "color": {
+      "field": "triage_category",
+      "type": "nominal",
+      "title": "Triage Category",
+      "scale": {
+        "domain": [
+          "Resuscitation",
+          "Emergency",
+          "Urgent",
+          "Semi-urgent",
+          "Non-urgent"
+        ],
+        "range": [
+          "#67001f",
+          "#b2182b",
+          "#d6604d",
+          "#f4a582",
+          "#fddbc7"
+        ]
+      },
+      "legend": {
+        "titleFont": "Georgia",
+        "labelFont": "Georgia"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "year",
+        "type": "ordinal",
+        "title": "Year"
+      },
+      {
+        "field": "triage_category",
+        "type": "nominal",
+        "title": "Triage"
+      },
+      {
+        "field": "presentations",
+        "type": "quantitative",
+        "title": "Presentations",
+        "format": ","
+      }
+    ]
+  },
+  "config": {
+    "background": "transparent",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#c5cfe0",
+      "titleColor": "#c5cfe0",
+      "gridColor": "#4a6080",
+      "tickColor": "#4a6080",
+      "domainColor": "#4a6080",
+      "labelFont": "Georgia",
+      "titleFont": "Georgia"
+    },
+    "legend": {
+      "labelColor": "#c5cfe0",
+      "titleColor": "#c5cfe0",
+      "labelFont": "Georgia",
+      "titleFont": "Georgia"
+    },
+    "title": {
+      "color": "#ffffff",
+      "font": "Georgia"
+    }
+  },
+  "background": "transparent"
+}
