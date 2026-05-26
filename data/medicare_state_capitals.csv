@@ -1,0 +1,9 @@
+state,city,latitude,longitude,total_patients,patient_rate_per_1000
+New South Wales,Sydney,-33.8688,151.2093,847341,101
+Victoria,Melbourne,-37.8136,144.9631,750546,109
+Queensland,Brisbane,-27.4698,153.0251,561251,102
+Western Australia,Perth,-31.9505,115.8605,273802,93
+South Australia,Adelaide,-34.9285,138.6007,173069,93
+Tasmania,Hobart,-42.8821,147.3272,53810,94
+Australian Capital Territory,Canberra,-35.2809,149.13,43092,92
+Northern Territory,Darwin,-12.4634,130.8456,14180,56

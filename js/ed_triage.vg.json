@@ -4,7 +4,7 @@
     "text": "Mental Health Emergency Department Presentations by Urgency (2014-2024)",
     "fontSize": 15,
     "fontWeight": "bold",
-    "font": "Georgia",
+    "font": "Times New Roman",
     "anchor": "middle",
     "color": "#ffffff"
   },
@@ -23,8 +23,8 @@
       "title": "Financial Year",
       "axis": {
         "labelAngle": -45,
-        "labelFont": "Georgia",
-        "titleFont": "Georgia"
+        "labelFont": "Times New Roman",
+        "titleFont": "Times New Roman"
       }
     },
     "y": {
@@ -33,8 +33,8 @@
       "title": "Number of Presentations",
       "axis": {
         "format": "~s",
-        "labelFont": "Georgia",
-        "titleFont": "Georgia"
+        "labelFont": "Times New Roman",
+        "titleFont": "Times New Roman"
       },
       "stack": "normalize"
     },
@@ -59,8 +59,8 @@
         ]
       },
       "legend": {
-        "titleFont": "Georgia",
-        "labelFont": "Georgia"
+        "titleFont": "Times New Roman",
+        "labelFont": "Times New Roman"
       }
     },
     "tooltip": [
@@ -93,18 +93,18 @@
       "gridColor": "#4a6080",
       "tickColor": "#4a6080",
       "domainColor": "#4a6080",
-      "labelFont": "Georgia",
-      "titleFont": "Georgia"
+      "labelFont": "Times New Roman",
+      "titleFont": "Times New Roman"
     },
     "legend": {
       "labelColor": "#c5cfe0",
       "titleColor": "#c5cfe0",
-      "labelFont": "Georgia",
-      "titleFont": "Georgia"
+      "labelFont": "Times New Roman",
+      "titleFont": "Times New Roman"
     },
     "title": {
       "color": "#ffffff",
-      "font": "Georgia"
+      "font": "Times New Roman"
     }
   },
   "background": "transparent"
