@@ -6,10 +6,11 @@
     "fontWeight": "bold",
     "font": "Times New Roman",
     "anchor": "middle",
-    "color": "#252525"
+    "color": "#ffffff"
   },
   "width": 750,
   "height": 450,
+  "background": "transparent",
   "projection": {"type": "equirectangular"},
   "layer": [
     {
