@@ -1,0 +1,89 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Total Medicare Mental Health Patients by State Capital (2023-24)",
+    "fontSize": 15,
+    "fontWeight": "bold",
+    "font": "Times New Roman",
+    "anchor": "middle",
+    "color": "#ffffff"
+  },
+  "width": 750,
+  "height": 450,
+  "background": "transparent",
+  "projection": {"type": "equirectangular"},
+  "layer": [
+    {
+      "data": {
+        "url": "https://evalisii.github.io/FIT2179-A2/js/ne_50m_admin_1_states_provinces.json",
+        "format": {"type": "topojson", "feature": "ne_50m_admin_1_states_provinces"}
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#1e2d4a",
+        "stroke": "#4a6080",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "data": {
+        "url": "https://evalisii.github.io/FIT2179-A2/data/medicare_state_capitals.csv"
+      },
+      "mark": {"type": "circle", "opacity": 0.85},
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "size": {
+          "field": "total_patients",
+          "type": "quantitative",
+          "title": "Total Patients",
+          "scale": {"range": [100, 3000]},
+          "legend": {
+            "titleFont": "Times New Roman",
+            "labelFont": "Times New Roman",
+            "titleColor": "#c5cfe0",
+            "labelColor": "#c5cfe0"
+          }
+        },
+        "color": {
+          "field": "patient_rate_per_1000",
+          "type": "quantitative",
+          "title": "Rate per 1,000",
+          "scale": {
+            "type": "threshold",
+            "domain": [70, 85, 95, 105],
+            "range": ["#d1e5f0", "#92c5de", "#4393c3", "#2166ac", "#053061"]
+          },
+          "legend": {
+            "titleFont": "Times New Roman",
+            "labelFont": "Times New Roman",
+            "titleColor": "#c5cfe0",
+            "labelColor": "#c5cfe0"
+          }
+        },
+        "tooltip": [
+          {"field": "state", "type": "nominal", "title": "State"},
+          {"field": "city", "type": "nominal", "title": "Capital"},
+          {"field": "total_patients", "type": "quantitative", "title": "Total Patients", "format": ","},
+          {"field": "patient_rate_per_1000", "type": "quantitative", "title": "Rate per 1,000"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "https://evalisii.github.io/FIT2179-A2/data/medicare_state_capitals.csv"
+      },
+      "mark": {"type": "text", "dy": -15, "font": "Times New Roman", "fontSize": 11, "fontWeight": "bold"},
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "text": {"field": "city", "type": "nominal"},
+        "color": {"value": "#c5cfe0"}
+      }
+    }
+  ],
+  "config": {
+    "background": "transparent",
+    "view": {"stroke": null}
+  }
+}
