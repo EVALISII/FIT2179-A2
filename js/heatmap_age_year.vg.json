@@ -1,0 +1,92 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Medicare Mental Health Patient Rates by Age Group and Year (2014-2024)",
+    "fontSize": 15,
+    "fontWeight": "bold",
+    "font": "Times New Roman",
+    "anchor": "middle",
+    "color": "#ffffff"
+  },
+  "width": 600,
+  "height": 280,
+  "background": "transparent",
+  "data": {
+    "url": "https://evalisii.github.io/FIT2179-A2/data/medicare_age_trend.csv"
+  },
+  "mark": {"type": "rect", "cornerRadius": 2},
+  "encoding": {
+    "x": {
+      "field": "FinancialYear",
+      "type": "ordinal",
+      "title": "Financial Year",
+      "axis": {
+        "labelAngle": -45,
+        "labelFont": "Times New Roman",
+        "titleFont": "Times New Roman",
+        "labelColor": "#c5cfe0",
+        "titleColor": "#c5cfe0",
+        "domainColor": "#4a6080",
+        "tickColor": "#4a6080"
+      }
+    },
+    "y": {
+      "field": "AgeGroup",
+      "type": "ordinal",
+      "title": "Age Group",
+      "sort": ["12-17 years", "18-24 years", "25-34 years", "35-44 years", "45-54 years", "55-64 years"],
+      "axis": {
+        "labelFont": "Times New Roman",
+        "titleFont": "Times New Roman",
+        "labelColor": "#c5cfe0",
+        "titleColor": "#c5cfe0",
+        "domainColor": "#4a6080",
+        "tickColor": "#4a6080"
+      }
+    },
+    "color": {
+      "field": "patient_rate_per_1000",
+      "type": "quantitative",
+      "title": "Patients per 1,000",
+      "scale": {
+        "type": "threshold",
+        "domain": [100, 125, 150, 175],
+        "range": ["#d1e5f0", "#92c5de", "#4393c3", "#2166ac", "#053061"]
+      },
+      "legend": {
+        "titleFont": "Times New Roman",
+        "labelFont": "Times New Roman",
+        "titleColor": "#c5cfe0",
+        "labelColor": "#c5cfe0"
+      }
+    },
+    "tooltip": [
+      {"field": "FinancialYear", "type": "ordinal", "title": "Year"},
+      {"field": "AgeGroup", "type": "ordinal", "title": "Age Group"},
+      {"field": "patient_rate_per_1000", "type": "quantitative", "title": "Rate per 1,000"}
+    ]
+  },
+  "config": {
+    "background": "transparent",
+    "view": {"stroke": null},
+    "axis": {
+      "labelColor": "#c5cfe0",
+      "titleColor": "#c5cfe0",
+      "gridColor": "#4a6080",
+      "tickColor": "#4a6080",
+      "domainColor": "#4a6080",
+      "labelFont": "Times New Roman",
+      "titleFont": "Times New Roman"
+    },
+    "legend": {
+      "labelColor": "#c5cfe0",
+      "titleColor": "#c5cfe0",
+      "labelFont": "Times New Roman",
+      "titleFont": "Times New Roman"
+    },
+    "title": {
+      "color": "#ffffff",
+      "font": "Times New Roman"
+    }
+  }
+}
