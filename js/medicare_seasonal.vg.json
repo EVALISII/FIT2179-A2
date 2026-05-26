@@ -1,0 +1,114 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Medicare Mental Health Patients by Quarter and Provider Type (2023-24)",
+    "fontSize": 15,
+    "fontWeight": "bold",
+    "font": "Times New Roman",
+    "anchor": "middle",
+    "color": "#ffffff"
+  },
+  "width": 500,
+  "height": 320,
+  "data": {
+    "url": "https://evalisii.github.io/FIT2179-A2/data/medicare_seasonal.csv"
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "Quarter",
+      "type": "ordinal",
+      "title": "Quarter",
+      "sort": [
+        "July to September",
+        "October to December",
+        "January to March",
+        "April to June"
+      ],
+      "axis": {
+        "labelAngle": -20,
+        "labelFont": "Times New Roman",
+        "titleFont": "Times New Roman"
+      }
+    },
+    "y": {
+      "field": "patients",
+      "type": "quantitative",
+      "title": "Number of Patients",
+      "axis": {
+        "format": "~s",
+        "labelFont": "Times New Roman",
+        "titleFont": "Times New Roman"
+      }
+    },
+    "color": {
+      "field": "ProviderType",
+      "type": "nominal",
+      "title": "Provider Type",
+      "scale": {
+        "domain": [
+          "General practitioners",
+          "Other psychologists",
+          "Clinical psychologists",
+          "Psychiatrists",
+          "Other allied health providers"
+        ],
+        "range": [
+          "#053061",
+          "#2166ac",
+          "#4393c3",
+          "#92c5de",
+          "#d1e5f0"
+        ]
+      },
+      "legend": {
+        "titleFont": "Times New Roman",
+        "labelFont": "Times New Roman"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "Quarter",
+        "type": "ordinal",
+        "title": "Quarter"
+      },
+      {
+        "field": "ProviderType",
+        "type": "nominal",
+        "title": "Provider"
+      },
+      {
+        "field": "patients",
+        "type": "quantitative",
+        "title": "Patients",
+        "format": ","
+      }
+    ]
+  },
+  "config": {
+    "background": "transparent",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#c5cfe0",
+      "titleColor": "#c5cfe0",
+      "gridColor": "#4a6080",
+      "tickColor": "#4a6080",
+      "domainColor": "#4a6080",
+      "labelFont": "Times New Roman",
+      "titleFont": "Times New Roman"
+    },
+    "legend": {
+      "labelColor": "#c5cfe0",
+      "titleColor": "#c5cfe0",
+      "labelFont": "Times New Roman",
+      "titleFont": "Times New Roman"
+    },
+    "title": {
+      "color": "#ffffff",
+      "font": "Times New Roman"
+    }
+  },
+  "background": "transparent"
+}

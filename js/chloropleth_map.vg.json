@@ -10,33 +10,57 @@
   },
   "width": 750,
   "height": 450,
-  "background": "transparent",
-  "projection": {"type": "equirectangular"},
+  "projection": {
+    "type": "equirectangular"
+  },
   "layer": [
     {
       "data": {
         "url": "https://evalisii.github.io/FIT2179-A2/js/ne_50m_admin_1_states_provinces.json",
-        "format": {"type": "topojson", "feature": "ne_50m_admin_1_states_provinces"}
+        "format": {
+          "type": "topojson",
+          "feature": "ne_50m_admin_1_states_provinces"
+        }
       },
       "transform": [
         {
-          "lookup": "properties.name",
+          "lookup": "properties.gn_name",
           "from": {
-            "data": {"url": "https://evalisii.github.io/FIT2179-A2/data/medicare_by_state.csv"},
+            "data": {
+              "url": "https://evalisii.github.io/FIT2179-A2/data/medicare_by_state.csv"
+            },
             "key": "state",
-            "fields": ["patient_rate_per_1000", "total_patients"]
+            "fields": [
+              "patient_rate_per_1000",
+              "total_patients"
+            ]
           }
         }
       ],
-      "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 1.5},
+      "mark": {
+        "type": "geoshape",
+        "stroke": "white",
+        "strokeWidth": 1.5
+      },
       "encoding": {
         "color": {
           "field": "patient_rate_per_1000",
           "type": "quantitative",
           "scale": {
             "type": "threshold",
-            "domain": [70, 85, 95, 105],
-            "range": ["#d1e5f0", "#92c5de", "#4393c3", "#2166ac", "#053061"]
+            "domain": [
+              70,
+              85,
+              95,
+              105
+            ],
+            "range": [
+              "#d1e5f0",
+              "#92c5de",
+              "#4393c3",
+              "#2166ac",
+              "#053061"
+            ]
           },
           "legend": {
             "title": "Patients per 1,000",
@@ -45,15 +69,50 @@
           }
         },
         "tooltip": [
-          {"field": "properties.name", "type": "nominal", "title": "State"},
-          {"field": "patient_rate_per_1000", "type": "quantitative", "title": "Rate per 1,000"},
-          {"field": "total_patients", "type": "quantitative", "title": "Total Patients", "format": ","}
+          {
+            "field": "properties.gn_name",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "patient_rate_per_1000",
+            "type": "quantitative",
+            "title": "Rate per 1,000"
+          },
+          {
+            "field": "total_patients",
+            "type": "quantitative",
+            "title": "Total Patients",
+            "format": ","
+          }
         ]
       }
     }
   ],
   "config": {
-    "background": "#transparent",
-    "view": {"stroke": null}
-  }
+    "background": "transparent",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#c5cfe0",
+      "titleColor": "#c5cfe0",
+      "gridColor": "#4a6080",
+      "tickColor": "#4a6080",
+      "domainColor": "#4a6080",
+      "labelFont": "Times New Roman",
+      "titleFont": "Times New Roman"
+    },
+    "legend": {
+      "labelColor": "#c5cfe0",
+      "titleColor": "#c5cfe0",
+      "labelFont": "Times New Roman",
+      "titleFont": "Times New Roman"
+    },
+    "title": {
+      "color": "#ffffff",
+      "font": "Times New Roman"
+    }
+  },
+  "background": "transparent"
 }

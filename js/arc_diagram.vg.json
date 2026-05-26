@@ -84,6 +84,7 @@
       "labelFont": "Times New Roman",
       "titleFont": "Times New Roman"
     },
-    "title": {"color": "#ffffff", "font": "Times New Roman"}
+    "title": {"color": "#ffffff", "font": "Times New Roman"
   }
+}
 }
