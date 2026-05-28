@@ -10,28 +10,69 @@
   },
   "width": 550,
   "height": 340,
-  "data": {"url": "https://evalisii.github.io/FIT2179-A2/data/medicare_age_sex_2023_24.csv"},
-  "mark": {"type": "bar", "cornerRadiusEnd": 2},
+  "data": {
+    "url": "https://evalisii.github.io/FIT2179-A2/data/medicare_age_sex_2023_24.csv"
+  },
+  "mark": {
+    "type": "bar",
+    "cornerRadiusEnd": 2,
+    "stroke": "#0f1f38",
+    "strokeWidth": 0.5
+  },
   "encoding": {
     "y": {
       "field": "AgeGroup",
       "type": "ordinal",
       "title": "Age Group",
-      "sort": ["0-4 years","5-11 years","12-17 years","18-24 years","25-34 years","35-44 years","45-54 years","55-64 years","65-74 years","75-84 years","85 years and over"],
-      "axis": {"labelFont": "Times New Roman", "titleFont": "Times New Roman"}
+      "sort": [
+        "0-4 years",
+        "5-11 years",
+        "12-17 years",
+        "18-24 years",
+        "25-34 years",
+        "35-44 years",
+        "45-54 years",
+        "55-64 years",
+        "65-74 years",
+        "75-84 years",
+        "85 years and over"
+      ],
+      "axis": {
+        "labelFont": "Times New Roman",
+        "titleFont": "Times New Roman",
+        "labelColor": "#c5cfe0",
+        "titleColor": "#c5cfe0",
+        "gridColor": "#4a6080",
+        "tickColor": "#4a6080",
+        "domainColor": "#4a6080"
+      }
     },
     "x": {
       "field": "patient_rate_per_1000",
       "type": "quantitative",
       "title": "Patients per 1,000 population",
-      "axis": {"labelFont": "Times New Roman", "titleFont": "Times New Roman"}
+      "axis": {
+        "labelFont": "Times New Roman",
+        "titleFont": "Times New Roman",
+        "labelColor": "#c5cfe0",
+        "titleColor": "#c5cfe0",
+        "gridColor": "#4a6080",
+        "tickColor": "#4a6080",
+        "domainColor": "#4a6080"
+      }
     },
     "color": {
       "field": "Sex",
       "type": "nominal",
       "scale": {
-        "domain": ["Female", "Male"],
-        "range": ["#2166ac", "#92c5de"]
+        "domain": [
+          "Female",
+          "Male"
+        ],
+        "range": [
+          "#2166ac",
+          "#92c5de"
+        ]
       },
       "legend": {
         "title": "Sex",
@@ -39,15 +80,52 @@
         "labelFont": "Times New Roman"
       }
     },
-    "xOffset": {"field": "Sex", "type": "nominal"},
+    "xOffset": {
+      "field": "Sex",
+      "type": "nominal"
+    },
     "tooltip": [
-      {"field": "AgeGroup", "type": "ordinal", "title": "Age Group"},
-      {"field": "Sex", "type": "nominal", "title": "Sex"},
-      {"field": "patient_rate_per_1000", "type": "quantitative", "title": "Rate per 1,000"}
+      {
+        "field": "AgeGroup",
+        "type": "ordinal",
+        "title": "Age Group"
+      },
+      {
+        "field": "Sex",
+        "type": "nominal",
+        "title": "Sex"
+      },
+      {
+        "field": "patient_rate_per_1000",
+        "type": "quantitative",
+        "title": "Rate per 1,000"
+      }
     ]
   },
   "config": {
     "background": "transparent",
-    "view": {"stroke": null}
-  }
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#c5cfe0",
+      "titleColor": "#c5cfe0",
+      "gridColor": "#4a6080",
+      "tickColor": "#4a6080",
+      "domainColor": "#4a6080",
+      "labelFont": "Times New Roman",
+      "titleFont": "Times New Roman"
+    },
+    "legend": {
+      "labelColor": "#c5cfe0",
+      "titleColor": "#c5cfe0",
+      "labelFont": "Times New Roman",
+      "titleFont": "Times New Roman"
+    },
+    "title": {
+      "color": "#ffffff",
+      "font": "Times New Roman"
+    }
+  },
+  "background": "transparent"
 }
