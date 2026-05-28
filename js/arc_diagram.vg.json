@@ -14,13 +14,27 @@
   "data": {
     "url": "https://evalisii.github.io/FIT2179-A2/data/network_age_diagnosis.csv"
   },
-  "mark": {"type": "rect", "cornerRadiusEnd": 2},
+  "mark": {
+    "type": "rect",
+    "cornerRadiusEnd": 2,
+    "stroke": "#0f1f38",
+    "strokeWidth": 1.5
+  },
   "encoding": {
     "x": {
       "field": "source",
       "type": "ordinal",
       "title": "Age Group",
-      "sort": ["0-11","12-17","18-24","25-34","35-44","45-54","55-64","65+"],
+      "sort": [
+        "0-11",
+        "12-17",
+        "18-24",
+        "25-34",
+        "35-44",
+        "45-54",
+        "55-64",
+        "65+"
+      ],
       "axis": {
         "labelFont": "Times New Roman",
         "titleFont": "Times New Roman",
@@ -34,7 +48,13 @@
       "field": "target",
       "type": "ordinal",
       "title": "Principal Diagnosis",
-      "sort": ["Schizophrenia & psychosis","Mood disorders","Anxiety & stress","Personality disorders","Substance use"],
+      "sort": [
+        "Schizophrenia & psychosis",
+        "Mood disorders",
+        "Anxiety & stress",
+        "Personality disorders",
+        "Substance use"
+      ],
       "axis": {
         "labelFont": "Times New Roman",
         "titleFont": "Times New Roman",
@@ -50,8 +70,19 @@
       "title": "Number of Contacts",
       "scale": {
         "type": "threshold",
-        "domain": [50000, 150000, 300000, 500000],
-        "range": ["#d1e5f0", "#92c5de", "#4393c3", "#2166ac", "#053061"]
+        "domain": [
+          50000,
+          150000,
+          300000,
+          500000
+        ],
+        "range": [
+          "#d1e5f0",
+          "#92c5de",
+          "#4393c3",
+          "#2166ac",
+          "#053061"
+        ]
       },
       "legend": {
         "titleFont": "Times New Roman",
@@ -61,14 +92,29 @@
       }
     },
     "tooltip": [
-      {"field": "source", "type": "ordinal", "title": "Age Group"},
-      {"field": "target", "type": "ordinal", "title": "Diagnosis"},
-      {"field": "contacts", "type": "quantitative", "title": "Contacts", "format": ","}
+      {
+        "field": "source",
+        "type": "ordinal",
+        "title": "Age Group"
+      },
+      {
+        "field": "target",
+        "type": "ordinal",
+        "title": "Diagnosis"
+      },
+      {
+        "field": "contacts",
+        "type": "quantitative",
+        "title": "Contacts",
+        "format": ","
+      }
     ]
   },
   "config": {
     "background": "transparent",
-    "view": {"stroke": null},
+    "view": {
+      "stroke": null
+    },
     "axis": {
       "labelColor": "#c5cfe0",
       "titleColor": "#c5cfe0",
@@ -84,7 +130,9 @@
       "labelFont": "Times New Roman",
       "titleFont": "Times New Roman"
     },
-    "title": {"color": "#ffffff", "font": "Times New Roman"
+    "title": {
+      "color": "#ffffff",
+      "font": "Times New Roman"
+    }
   }
-}
 }
