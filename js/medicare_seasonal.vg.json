@@ -54,11 +54,11 @@
           "Other allied health providers"
         ],
         "range": [
-          "#053061",
-          "#2166ac",
-          "#4393c3",
+          "#d1e5f0",
           "#92c5de",
-          "#d1e5f0"
+          "#4393c3",
+          "#2166ac",
+          "#053061"
         ]
       },
       "legend": {
