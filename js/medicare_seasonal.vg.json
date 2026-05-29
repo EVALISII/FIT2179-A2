@@ -47,15 +47,15 @@
       "title": "Provider Type",
       "scale": {
         "domain": [
-          "General practitioners",
-          "Other psychologists",
-          "Clinical psychologists",
+          "Other allied health providers",
           "Psychiatrists",
-          "Other allied health providers"
+          "Clinical psychologists",
+          "Other psychologists",
+          "General practitioners"
         ],
         "range": [
-          "#a8d4f0",
-          "#6baed6",
+          "#d1e5f0",
+          "#92c5de",
           "#4393c3",
           "#2166ac",
           "#053061"
