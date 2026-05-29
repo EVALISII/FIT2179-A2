@@ -1,0 +1,189 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Growth in Medicare Patients vs ED Presentations (2014-2024, indexed to 2014-15 = 100)",
+    "fontSize": 15,
+    "fontWeight": "bold",
+    "font": "Times New Roman",
+    "anchor": "middle",
+    "color": "#ffffff",
+    "subtitle": "Both series start at 100 in 2014-15. A value of 130 means 30% growth from baseline.",
+    "subtitleColor": "#c5cfe0",
+    "subtitleFont": "Times New Roman",
+    "subtitleFontSize": 11
+  },
+  "width": 650,
+  "height": 320,
+  "background": "transparent",
+  "data": {
+    "url": "https://evalisii.github.io/FIT2179-A2/data/medicare_ed_indexed.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 2.5,
+        "point": true
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "title": "Financial Year",
+          "axis": {
+            "labelColor": "#c5cfe0",
+            "titleColor": "#c5cfe0",
+            "gridColor": "#4a6080",
+            "tickColor": "#4a6080",
+            "domainColor": "#4a6080",
+            "labelFont": "Times New Roman",
+            "titleFont": "Times New Roman",
+            "labelAngle": -45
+          }
+        },
+        "y": {
+          "field": "index",
+          "type": "quantitative",
+          "title": "Index (2014-15 = 100)",
+          "scale": {
+            "domain": [
+              95,
+              145
+            ]
+          },
+          "axis": {
+            "labelColor": "#c5cfe0",
+            "titleColor": "#c5cfe0",
+            "gridColor": "#4a6080",
+            "tickColor": "#4a6080",
+            "domainColor": "#4a6080",
+            "labelFont": "Times New Roman",
+            "titleFont": "Times New Roman"
+          }
+        },
+        "color": {
+          "field": "series",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Medicare patients",
+              "ED presentations"
+            ],
+            "range": [
+              "#2166ac",
+              "#92c5de"
+            ]
+          },
+          "legend": {
+            "title": null,
+            "labelFont": "Times New Roman",
+            "labelColor": "#c5cfe0",
+            "orient": "top-left"
+          }
+        },
+        "strokeDash": {
+          "field": "series",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Medicare patients",
+              "ED presentations"
+            ],
+            "range": [
+              [
+                1,
+                0
+              ],
+              [
+                6,
+                3
+              ]
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "year",
+            "type": "ordinal",
+            "title": "Year"
+          },
+          {
+            "field": "series",
+            "type": "nominal",
+            "title": "Series"
+          },
+          {
+            "field": "index",
+            "type": "quantitative",
+            "title": "Index",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#4a6080",
+        "strokeDash": [
+          4,
+          4
+        ],
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "y": {
+          "datum": 100
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 4,
+        "dy": -8,
+        "color": "#4a6080",
+        "font": "Times New Roman",
+        "fontSize": 10
+      },
+      "encoding": {
+        "x": {
+          "datum": "2014-15"
+        },
+        "y": {
+          "datum": 100
+        },
+        "text": {
+          "value": "Baseline (100)"
+        }
+      }
+    }
+  ],
+  "config": {
+    "background": "transparent",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#c5cfe0",
+      "titleColor": "#c5cfe0",
+      "gridColor": "#4a6080",
+      "tickColor": "#4a6080",
+      "domainColor": "#4a6080",
+      "labelFont": "Times New Roman",
+      "titleFont": "Times New Roman"
+    },
+    "legend": {
+      "labelColor": "#c5cfe0",
+      "titleColor": "#c5cfe0",
+      "labelFont": "Times New Roman",
+      "titleFont": "Times New Roman"
+    },
+    "title": {
+      "color": "#ffffff",
+      "font": "Times New Roman"
+    }
+  }
+}

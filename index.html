@@ -93,7 +93,7 @@
 
     <section>
       <h2>More services, more emergencies</h2>
-      <p>Despite record Medicare mental health service volumes, emergency department presentations for mental health conditions have risen in parallel, not fallen. Between 2014 and 2024, ED presentations grew by over 60%, outpacing population growth. The system is treating more people, but not preventing the most severe episodes. Note: the two axes use different scales and should not be directly compared in magnitude. The key insight is the shared direction of both trends over time, not the gap between them.</p>
+      <p>Both indexed to 2014-15 as the baseline (value of 100), this chart shows the relative growth of Medicare mental health patients and emergency department presentations over the decade. Medicare patient numbers grew by around 31% by 2023-24, while ED presentations grew by around 22%. Crucially, both trends moved upward together rather than ED falling as Medicare services expanded. This suggests expanded outpatient care has not reduced crisis-level demand on emergency departments.</p>
       <div class="chart-card">
         <div id="medicare_vs_ed"></div>
       </div>
@@ -144,6 +144,67 @@
       </div>
     </section>
 
+
+    <div class="section-header">
+      <span class="section-title">Compare any two charts</span>
+    </div>
+
+    <section>
+      <h2>Chart comparison tool</h2>
+      <p>Use the slider to compare any two charts from this visualisation side by side. Drag the divider or use the slider below to reveal more of each chart.</p>
+      <div class="chart-card">
+        <div id="comparison_widget">
+
+          <div style="display:flex;gap:12px;margin-bottom:1rem;align-items:center;">
+            <label style="font-size:13px;color:#c5cfe0;white-space:nowrap;font-family:Georgia;">Chart A</label>
+            <select id="chartA" style="flex:1;font-size:13px;background:#0f1f38;color:#c5cfe0;border:1px solid #4a6080;border-radius:4px;padding:4px 8px;">
+              <option value="heatmap_age_year">Which age groups drove growth? (Heatmap)</option>
+              <option value="line_chart">A decade of growing demand (Line)</option>
+              <option value="bar_chart_age_sex">Gender gap in help-seeking (Bar)</option>
+              <option value="medicare_ed_indexed">More services, more emergencies (Indexed)</option>
+              <option value="scatter_medicare_ed">Medicare access vs ED crises (Scatter)</option>
+              <option value="lollipop_state_rate">State access rates (Lollipop)</option>
+              <option value="slope_covid_ed">Pre vs post COVID by state (Slope)</option>
+              <option value="ed_triage">ED triage urgency (Area)</option>
+              <option value="arc_diagram">Diagnosis patterns (Matrix)</option>
+            </select>
+          </div>
+
+          <div style="display:flex;gap:12px;margin-bottom:1rem;align-items:center;">
+            <label style="font-size:13px;color:#c5cfe0;white-space:nowrap;font-family:Georgia;">Chart B</label>
+            <select id="chartB" style="flex:1;font-size:13px;background:#0f1f38;color:#c5cfe0;border:1px solid #4a6080;border-radius:4px;padding:4px 8px;">
+              <option value="bar_chart_age_sex">Gender gap in help-seeking (Bar)</option>
+              <option value="heatmap_age_year">Which age groups drove growth? (Heatmap)</option>
+              <option value="line_chart">A decade of growing demand (Line)</option>
+              <option value="medicare_ed_indexed">More services, more emergencies (Indexed)</option>
+              <option value="scatter_medicare_ed">Medicare access vs ED crises (Scatter)</option>
+              <option value="lollipop_state_rate">State access rates (Lollipop)</option>
+              <option value="slope_covid_ed">Pre vs post COVID by state (Slope)</option>
+              <option value="ed_triage">ED triage urgency (Area)</option>
+              <option value="arc_diagram">Diagnosis patterns (Matrix)</option>
+            </select>
+          </div>
+
+          <div style="position:relative;width:100%;height:500px;border-radius:8px;overflow:hidden;border:1px solid #2a3f6a;background:#1e2d4a;">
+            <iframe id="frameA" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" src="about:blank"></iframe>
+            <iframe id="frameB" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;clip-path:inset(0 0 0 50%);" src="about:blank"></iframe>
+            <div id="divider" style="position:absolute;top:0;left:50%;width:3px;height:100%;background:#92c5de;cursor:ew-resize;transform:translateX(-50%);z-index:10;">
+              <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:32px;height:32px;border-radius:50%;background:#1e2d4a;border:2px solid #92c5de;display:flex;align-items:center;justify-content:center;font-family:Georgia;font-size:16px;color:#92c5de;">&#8596;</div>
+            </div>
+            <div style="position:absolute;top:10px;left:10px;font-size:11px;font-family:Georgia;background:#1e2d4a;border:1px solid #4a6080;border-radius:4px;padding:3px 8px;color:#c5cfe0;z-index:9;">A</div>
+            <div style="position:absolute;top:10px;right:10px;font-size:11px;font-family:Georgia;background:#1e2d4a;border:1px solid #4a6080;border-radius:4px;padding:3px 8px;color:#c5cfe0;z-index:9;">B</div>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:12px;margin-top:1rem;">
+            <span style="font-size:12px;color:#c5cfe0;font-family:Georgia;">A</span>
+            <input type="range" id="compSlider" min="5" max="95" value="50" step="1" style="flex:1;">
+            <span style="font-size:12px;color:#c5cfe0;font-family:Georgia;">B</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer>
@@ -154,7 +215,7 @@
       <p class="footer-meta">
         Data sources: Australian Institute of Health and Welfare (AIHW), Medicare Mental Health Services 2023–24; Mental Health Emergency Department Care 2023–24; National Community Mental Health Care 2023–24 |
         Author: Joe Fraser | Student ID: 33159904 | 2026 |
-        AI tools used for code and text refinement (Claude, Anthropic)
+        AI tools used for code generation and text refinement (Claude, Anthropic)
       </p>
     </div>
   </footer>
@@ -166,12 +227,68 @@
     vegaEmbed('#heatmap', 'js/heatmap_age_year.vg.json').catch(console.error);
     vegaEmbed('#bar_chart_age_sex', 'js/bar_chart_age_sex.vg.json').catch(console.error);
     vegaEmbed('#provider_trend', 'js/medicare_provider_trend.vg.json').catch(console.error);
-    vegaEmbed('#medicare_vs_ed', 'js/medicare_ed_comparison.vg.json').catch(console.error);
+    vegaEmbed('#medicare_vs_ed', 'js/medicare_ed_indexed.vg.json').catch(console.error);
     vegaEmbed('#scatter', 'js/scatter_medicare_ed.vg.json').catch(console.error);
     vegaEmbed('#ed_triage', 'js/ed_triage.vg.json').catch(console.error);
     vegaEmbed('#slope', 'js/slope_covid_ed.vg.json').catch(console.error);
     vegaEmbed('#ed_diagnosis', 'js/ed_diagnosis.vg.json').catch(console.error);
     vegaEmbed('#arc', 'js/arc_diagram.vg.json').catch(console.error);
+  </script>
+
+
+  <script>
+    const BASE = 'https://evalisii.github.io/FIT2179-A2/';
+
+    function chartHTML(file) {
+      return '<!DOCTYPE html><html><head>'
+        + '<script src="https://cdn.jsdelivr.net/npm/vega@5"><\/script>'
+        + '<script src="https://cdn.jsdelivr.net/npm/vega-lite@6"><\/script>'
+        + '<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"><\/script>'
+        + '<style>body{margin:0;padding:12px;background:#1e2d4a;display:flex;align-items:center;justify-content:center;min-height:100vh;box-sizing:border-box;}<\/style>'
+        + '<\/head><body><div id="c"></div>'
+        + '<script>vegaEmbed("#c","' + BASE + 'js/' + file + '.vg.json",{actions:false}).catch(console.error);<\/script>'
+        + '<\/body><\/html>';
+    }
+
+    function setPos(pct) {
+      pct = Math.max(5, Math.min(95, pct));
+      document.getElementById('frameB').style.clipPath = 'inset(0 0 0 ' + pct + '%)';
+      document.getElementById('divider').style.left = pct + '%';
+      document.getElementById('compSlider').value = pct;
+    }
+
+    function loadCharts() {
+      var a = document.getElementById('chartA').value;
+      var b = document.getElementById('chartB').value;
+      document.getElementById('frameA').srcdoc = chartHTML(a);
+      document.getElementById('frameB').srcdoc = chartHTML(b);
+    }
+
+    document.getElementById('compSlider').addEventListener('input', function(e) { setPos(+e.target.value); });
+    document.getElementById('chartA').addEventListener('change', loadCharts);
+    document.getElementById('chartB').addEventListener('change', loadCharts);
+
+    var divider = document.getElementById('divider');
+    var container = divider.parentElement;
+    var dragging = false;
+
+    divider.addEventListener('mousedown', function() { dragging = true; });
+    document.addEventListener('mouseup', function() { dragging = false; });
+    document.addEventListener('mousemove', function(e) {
+      if (!dragging) return;
+      var rect = container.getBoundingClientRect();
+      setPos(((e.clientX - rect.left) / rect.width) * 100);
+    });
+
+    divider.addEventListener('touchstart', function(e) { dragging = true; e.preventDefault(); }, {passive: false});
+    document.addEventListener('touchend', function() { dragging = false; });
+    document.addEventListener('touchmove', function(e) {
+      if (!dragging) return;
+      var rect = container.getBoundingClientRect();
+      setPos(((e.touches[0].clientX - rect.left) / rect.width) * 100);
+    }, {passive: true});
+
+    loadCharts();
   </script>
 
 </body>

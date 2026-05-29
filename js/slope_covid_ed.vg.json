@@ -7,7 +7,7 @@
     "font": "Times New Roman",
     "anchor": "middle",
     "color": "#ffffff",
-    "subtitle": "Rate per 1,000 population. NT omitted from main view due to scale \u2014 see annotation.",
+    "subtitle": "Rate per 1,000 population. NT is a persistent outlier \u2014 see annotation.",
     "subtitleColor": "#c5cfe0",
     "subtitleFont": "Times New Roman",
     "subtitleFontSize": 11
@@ -158,7 +158,7 @@
           "scale": {
             "domain": [
               8,
-              16
+              30
             ]
           }
         },
@@ -217,11 +217,7 @@
           }
         ]
       },
-      "transform": [
-        {
-          "filter": "datum.state !== 'NT'"
-        }
-      ]
+      "transform": []
     },
     {
       "mark": {
@@ -244,7 +240,7 @@
           "scale": {
             "domain": [
               8,
-              16
+              30
             ]
           },
           "axis": {
@@ -285,11 +281,7 @@
           }
         }
       },
-      "transform": [
-        {
-          "filter": "datum.state !== 'NT'"
-        }
-      ]
+      "transform": []
     },
     {
       "mark": {
@@ -303,9 +295,6 @@
       "transform": [
         {
           "filter": "datum.period === 'Post-COVID (2023-24)'"
-        },
-        {
-          "filter": "datum.state !== 'NT'"
         }
       ],
       "encoding": {
@@ -323,7 +312,7 @@
           "scale": {
             "domain": [
               8,
-              16
+              30
             ]
           },
           "axis": {
@@ -360,10 +349,31 @@
           "datum": "Post-COVID (2023-24)"
         },
         "y": {
-          "datum": 15.5
+          "datum": 27.5
         },
         "text": {
-          "value": "NT excluded (26.7) \u2014 see scatter plot"
+          "value": "NT (26.7): geographic isolation,"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "font": "Times New Roman",
+        "fontSize": 10,
+        "fontStyle": "italic",
+        "color": "#c5cfe0"
+      },
+      "encoding": {
+        "x": {
+          "datum": "Post-COVID (2023-24)"
+        },
+        "y": {
+          "datum": 25.8
+        },
+        "text": {
+          "value": "workforce shortages, remote access"
         }
       }
     }
