@@ -57,13 +57,13 @@
           },
           "scale": {
             "domain": [
-              0,
-              120
+              50,
+              115
             ]
           }
         },
         "x2": {
-          "datum": 0
+          "datum": 50
         }
       }
     },
@@ -85,8 +85,8 @@
           "type": "quantitative",
           "scale": {
             "domain": [
-              0,
-              120
+              50,
+              115
             ]
           }
         },

@@ -37,7 +37,14 @@
             "tickColor": "#4a6080",
             "domainColor": "#4a6080",
             "labelFont": "Times New Roman",
-            "titleFont": "Times New Roman"
+            "titleFont": "Times New Roman",
+            "tickCount": 6
+          },
+          "scale": {
+            "domain": [
+              40,
+              115
+            ]
           }
         },
         "y": {
@@ -51,16 +58,42 @@
             "tickColor": "#4a6080",
             "domainColor": "#4a6080",
             "labelFont": "Times New Roman",
-            "titleFont": "Times New Roman"
+            "titleFont": "Times New Roman",
+            "tickCount": 6
+          },
+          "scale": {
+            "domain": [
+              4,
+              30
+            ]
           }
         },
         "color": {
           "field": "ed_rate_per_1000",
           "type": "quantitative",
           "scale": {
-            "scheme": "blues"
+            "type": "threshold",
+            "domain": [
+              9,
+              12,
+              15,
+              20
+            ],
+            "range": [
+              "#d1e5f0",
+              "#92c5de",
+              "#4393c3",
+              "#2166ac",
+              "#053061"
+            ]
           },
-          "legend": null
+          "legend": {
+            "title": "ED Rate per 1,000",
+            "labelFont": "Times New Roman",
+            "titleFont": "Times New Roman",
+            "labelColor": "#c5cfe0",
+            "titleColor": "#c5cfe0"
+          }
         },
         "tooltip": [
           {
@@ -92,11 +125,43 @@
       "encoding": {
         "x": {
           "field": "patient_rate_per_1000",
-          "type": "quantitative"
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              40,
+              115
+            ]
+          },
+          "axis": {
+            "labelColor": "#c5cfe0",
+            "titleColor": "#c5cfe0",
+            "gridColor": "#4a6080",
+            "tickColor": "#4a6080",
+            "domainColor": "#4a6080",
+            "labelFont": "Times New Roman",
+            "titleFont": "Times New Roman",
+            "tickCount": 6
+          }
         },
         "y": {
           "field": "ed_rate_per_1000",
-          "type": "quantitative"
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              4,
+              30
+            ]
+          },
+          "axis": {
+            "labelColor": "#c5cfe0",
+            "titleColor": "#c5cfe0",
+            "gridColor": "#4a6080",
+            "tickColor": "#4a6080",
+            "domainColor": "#4a6080",
+            "labelFont": "Times New Roman",
+            "titleFont": "Times New Roman",
+            "tickCount": 6
+          }
         },
         "text": {
           "field": "state_abbrev",

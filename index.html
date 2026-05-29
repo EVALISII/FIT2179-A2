@@ -84,13 +84,7 @@
       </div>
     </section>
 
-    <section>
-      <h2>Has the ranking of providers changed over time?</h2>
-      <p>General practitioners have held the top position throughout the decade with no challenge. However a notable shift occurred in 2022–23 — psychiatrists overtook clinical psychologists for the first time, rising from 4th to 3rd place as clinical psychologist patient numbers plateaued post-COVID. This suggests growing demand for psychiatric care that Medicare's Better Access cap on psychology sessions may not be adequately meeting.</p>
-      <div class="chart-card">
-        <div id="bump"></div>
-      </div>
-    </section>
+
 
     <!-- PART 4 -->
     <div class="section-header">
@@ -172,7 +166,6 @@
     vegaEmbed('#heatmap', 'js/heatmap_age_year.vg.json').catch(console.error);
     vegaEmbed('#bar_chart_age_sex', 'js/bar_chart_age_sex.vg.json').catch(console.error);
     vegaEmbed('#provider_trend', 'js/medicare_provider_trend.vg.json').catch(console.error);
-    vegaEmbed('#bump', 'js/bump_provider_rank.vg.json').catch(console.error);
     vegaEmbed('#medicare_vs_ed', 'js/medicare_ed_comparison.vg.json').catch(console.error);
     vegaEmbed('#scatter', 'js/scatter_medicare_ed.vg.json').catch(console.error);
     vegaEmbed('#ed_triage', 'js/ed_triage.vg.json').catch(console.error);

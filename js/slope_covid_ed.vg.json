@@ -152,7 +152,14 @@
             "tickColor": "#4a6080",
             "domainColor": "#4a6080",
             "labelFont": "Times New Roman",
-            "titleFont": "Times New Roman"
+            "titleFont": "Times New Roman",
+            "tickCount": 6
+          },
+          "scale": {
+            "domain": [
+              8,
+              30
+            ]
           }
         },
         "color": {
@@ -228,7 +235,23 @@
         },
         "y": {
           "field": "rate",
-          "type": "quantitative"
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              8,
+              30
+            ]
+          },
+          "axis": {
+            "labelColor": "#c5cfe0",
+            "titleColor": "#c5cfe0",
+            "gridColor": "#4a6080",
+            "tickColor": "#4a6080",
+            "domainColor": "#4a6080",
+            "labelFont": "Times New Roman",
+            "titleFont": "Times New Roman",
+            "tickCount": 6
+          }
         },
         "color": {
           "field": "state",
@@ -264,11 +287,15 @@
         "align": "left",
         "dx": 6,
         "font": "Times New Roman",
-        "fontSize": 10
+        "fontSize": 10,
+        "dy": -10
       },
       "transform": [
         {
           "filter": "datum.period === 'Post-COVID (2023-24)'"
+        },
+        {
+          "filter": "datum.state !== 'WA' && datum.state !== 'ACT'"
         }
       ],
       "encoding": {
@@ -282,7 +309,23 @@
         },
         "y": {
           "field": "rate",
-          "type": "quantitative"
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              8,
+              30
+            ]
+          },
+          "axis": {
+            "labelColor": "#c5cfe0",
+            "titleColor": "#c5cfe0",
+            "gridColor": "#4a6080",
+            "tickColor": "#4a6080",
+            "domainColor": "#4a6080",
+            "labelFont": "Times New Roman",
+            "titleFont": "Times New Roman",
+            "tickCount": 6
+          }
         },
         "text": {
           "field": "state",
