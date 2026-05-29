@@ -1,0 +1,322 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "ED Mental Health Presentation Rates: Pre vs Post COVID by State",
+    "fontSize": 15,
+    "fontWeight": "bold",
+    "font": "Times New Roman",
+    "anchor": "middle",
+    "color": "#ffffff",
+    "subtitle": "Rate per 1,000 population. Lines sloping up = increased ED burden post-COVID.",
+    "subtitleColor": "#c5cfe0",
+    "subtitleFont": "Times New Roman",
+    "subtitleFontSize": 11
+  },
+  "width": 300,
+  "height": 380,
+  "background": "transparent",
+  "data": {
+    "values": [
+      {
+        "state": "NSW",
+        "period": "Pre-COVID (2019-20)",
+        "rate": 11.5,
+        "sort_order": 1
+      },
+      {
+        "state": "NSW",
+        "period": "Post-COVID (2023-24)",
+        "rate": 11.1,
+        "sort_order": 2
+      },
+      {
+        "state": "Vic",
+        "period": "Pre-COVID (2019-20)",
+        "rate": 9.4,
+        "sort_order": 1
+      },
+      {
+        "state": "Vic",
+        "period": "Post-COVID (2023-24)",
+        "rate": 9.7,
+        "sort_order": 2
+      },
+      {
+        "state": "Qld",
+        "period": "Pre-COVID (2019-20)",
+        "rate": 11.9,
+        "sort_order": 1
+      },
+      {
+        "state": "Qld",
+        "period": "Post-COVID (2023-24)",
+        "rate": 13.0,
+        "sort_order": 2
+      },
+      {
+        "state": "WA",
+        "period": "Pre-COVID (2019-20)",
+        "rate": 12.9,
+        "sort_order": 1
+      },
+      {
+        "state": "WA",
+        "period": "Post-COVID (2023-24)",
+        "rate": 12.9,
+        "sort_order": 2
+      },
+      {
+        "state": "SA",
+        "period": "Pre-COVID (2019-20)",
+        "rate": 14.4,
+        "sort_order": 1
+      },
+      {
+        "state": "SA",
+        "period": "Post-COVID (2023-24)",
+        "rate": 11.9,
+        "sort_order": 2
+      },
+      {
+        "state": "Tas",
+        "period": "Pre-COVID (2019-20)",
+        "rate": 10.6,
+        "sort_order": 1
+      },
+      {
+        "state": "Tas",
+        "period": "Post-COVID (2023-24)",
+        "rate": 10.5,
+        "sort_order": 2
+      },
+      {
+        "state": "ACT",
+        "period": "Pre-COVID (2019-20)",
+        "rate": 11.3,
+        "sort_order": 1
+      },
+      {
+        "state": "ACT",
+        "period": "Post-COVID (2023-24)",
+        "rate": 10.7,
+        "sort_order": 2
+      },
+      {
+        "state": "NT",
+        "period": "Pre-COVID (2019-20)",
+        "rate": 27.6,
+        "sort_order": 1
+      },
+      {
+        "state": "NT",
+        "period": "Post-COVID (2023-24)",
+        "rate": 26.7,
+        "sort_order": 2
+      }
+    ]
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "period",
+          "type": "ordinal",
+          "sort": [
+            "Pre-COVID (2019-20)",
+            "Post-COVID (2023-24)"
+          ],
+          "title": null,
+          "axis": {
+            "labelColor": "#c5cfe0",
+            "titleColor": "#c5cfe0",
+            "gridColor": "#4a6080",
+            "tickColor": "#4a6080",
+            "domainColor": "#4a6080",
+            "labelFont": "Times New Roman",
+            "titleFont": "Times New Roman",
+            "labelFontSize": 11
+          }
+        },
+        "y": {
+          "field": "rate",
+          "type": "quantitative",
+          "title": "ED Presentations per 1,000",
+          "axis": {
+            "labelColor": "#c5cfe0",
+            "titleColor": "#c5cfe0",
+            "gridColor": "#4a6080",
+            "tickColor": "#4a6080",
+            "domainColor": "#4a6080",
+            "labelFont": "Times New Roman",
+            "titleFont": "Times New Roman"
+          }
+        },
+        "color": {
+          "field": "state",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "NSW",
+              "Vic",
+              "Qld",
+              "WA",
+              "SA",
+              "Tas",
+              "ACT",
+              "NT"
+            ],
+            "range": [
+              "#d1e5f0",
+              "#92c5de",
+              "#4393c3",
+              "#6baed6",
+              "#2166ac",
+              "#08519c",
+              "#053061",
+              "#c5cfe0"
+            ]
+          },
+          "legend": {
+            "titleFont": "Times New Roman",
+            "labelFont": "Times New Roman",
+            "titleColor": "#c5cfe0",
+            "labelColor": "#c5cfe0",
+            "title": "State"
+          }
+        },
+        "detail": {
+          "field": "state",
+          "type": "nominal"
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "period",
+            "type": "ordinal",
+            "title": "Period"
+          },
+          {
+            "field": "rate",
+            "type": "quantitative",
+            "title": "ED Rate per 1,000"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 80
+      },
+      "encoding": {
+        "x": {
+          "field": "period",
+          "type": "ordinal",
+          "sort": [
+            "Pre-COVID (2019-20)",
+            "Post-COVID (2023-24)"
+          ]
+        },
+        "y": {
+          "field": "rate",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "state",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "NSW",
+              "Vic",
+              "Qld",
+              "WA",
+              "SA",
+              "Tas",
+              "ACT",
+              "NT"
+            ],
+            "range": [
+              "#d1e5f0",
+              "#92c5de",
+              "#4393c3",
+              "#6baed6",
+              "#2166ac",
+              "#08519c",
+              "#053061",
+              "#c5cfe0"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 6,
+        "font": "Times New Roman",
+        "fontSize": 10
+      },
+      "transform": [
+        {
+          "filter": "datum.period === 'Post-COVID (2023-24)'"
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "period",
+          "type": "ordinal",
+          "sort": [
+            "Pre-COVID (2019-20)",
+            "Post-COVID (2023-24)"
+          ]
+        },
+        "y": {
+          "field": "rate",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "state",
+          "type": "nominal"
+        },
+        "color": {
+          "value": "#c5cfe0"
+        }
+      }
+    }
+  ],
+  "config": {
+    "background": "transparent",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#c5cfe0",
+      "titleColor": "#c5cfe0",
+      "gridColor": "#4a6080",
+      "tickColor": "#4a6080",
+      "domainColor": "#4a6080",
+      "labelFont": "Times New Roman",
+      "titleFont": "Times New Roman"
+    },
+    "legend": {
+      "labelColor": "#c5cfe0",
+      "titleColor": "#c5cfe0",
+      "labelFont": "Times New Roman",
+      "titleFont": "Times New Roman"
+    },
+    "title": {
+      "color": "#ffffff",
+      "font": "Times New Roman"
+    }
+  }
+}

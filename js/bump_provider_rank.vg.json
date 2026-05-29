@@ -1,0 +1,180 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Provider Type Rankings by Patient Volume (2014-2024)",
+    "fontSize": 15,
+    "fontWeight": "bold",
+    "font": "Times New Roman",
+    "anchor": "middle",
+    "color": "#ffffff",
+    "subtitle": "Rank 1 = most patients. Note: Psychiatrists dropped from 4th to 3rd as Clinical Psychologists fell.",
+    "subtitleColor": "#c5cfe0",
+    "subtitleFont": "Times New Roman",
+    "subtitleFontSize": 11
+  },
+  "width": 620,
+  "height": 280,
+  "background": "transparent",
+  "data": {
+    "url": "https://evalisii.github.io/FIT2179-A2/data/bump_provider_rank.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 2.5
+      },
+      "encoding": {
+        "x": {
+          "field": "FinancialYear",
+          "type": "ordinal",
+          "title": "Financial Year",
+          "axis": {
+            "labelColor": "#c5cfe0",
+            "titleColor": "#c5cfe0",
+            "gridColor": "#4a6080",
+            "tickColor": "#4a6080",
+            "domainColor": "#4a6080",
+            "labelFont": "Times New Roman",
+            "titleFont": "Times New Roman",
+            "labelAngle": -45
+          }
+        },
+        "y": {
+          "field": "rank",
+          "type": "ordinal",
+          "title": "Rank (1 = most patients)",
+          "sort": "ascending",
+          "axis": {
+            "labelColor": "#c5cfe0",
+            "titleColor": "#c5cfe0",
+            "gridColor": "#4a6080",
+            "tickColor": "#4a6080",
+            "domainColor": "#4a6080",
+            "labelFont": "Times New Roman",
+            "titleFont": "Times New Roman"
+          },
+          "scale": {
+            "reverse": true
+          }
+        },
+        "color": {
+          "field": "ProviderType",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "General practitioners",
+              "Other psychologists",
+              "Clinical psychologists",
+              "Psychiatrists",
+              "Other allied health providers"
+            ],
+            "range": [
+              "#053061",
+              "#2166ac",
+              "#4393c3",
+              "#92c5de",
+              "#d1e5f0"
+            ]
+          },
+          "legend": {
+            "titleFont": "Times New Roman",
+            "labelFont": "Times New Roman",
+            "titleColor": "#c5cfe0",
+            "labelColor": "#c5cfe0",
+            "title": "Provider Type"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "FinancialYear",
+            "type": "ordinal",
+            "title": "Year"
+          },
+          {
+            "field": "ProviderType",
+            "type": "nominal",
+            "title": "Provider"
+          },
+          {
+            "field": "rank",
+            "type": "ordinal",
+            "title": "Rank"
+          },
+          {
+            "field": "patients",
+            "type": "quantitative",
+            "title": "Patients",
+            "format": ","
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 80
+      },
+      "encoding": {
+        "x": {
+          "field": "FinancialYear",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "rank",
+          "type": "ordinal",
+          "sort": "ascending",
+          "scale": {
+            "reverse": true
+          }
+        },
+        "color": {
+          "field": "ProviderType",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "General practitioners",
+              "Other psychologists",
+              "Clinical psychologists",
+              "Psychiatrists",
+              "Other allied health providers"
+            ],
+            "range": [
+              "#053061",
+              "#2166ac",
+              "#4393c3",
+              "#92c5de",
+              "#d1e5f0"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "config": {
+    "background": "transparent",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#c5cfe0",
+      "titleColor": "#c5cfe0",
+      "gridColor": "#4a6080",
+      "tickColor": "#4a6080",
+      "domainColor": "#4a6080",
+      "labelFont": "Times New Roman",
+      "titleFont": "Times New Roman"
+    },
+    "legend": {
+      "labelColor": "#c5cfe0",
+      "titleColor": "#c5cfe0",
+      "labelFont": "Times New Roman",
+      "titleFont": "Times New Roman"
+    },
+    "title": {
+      "color": "#ffffff",
+      "font": "Times New Roman"
+    }
+  }
+}

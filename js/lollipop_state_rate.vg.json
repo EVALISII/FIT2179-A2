@@ -1,0 +1,177 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Medicare Mental Health Patient Rate by State (2023-24)",
+    "fontSize": 15,
+    "fontWeight": "bold",
+    "font": "Times New Roman",
+    "anchor": "middle",
+    "color": "#ffffff",
+    "subtitle": "The Northern Territory's rate is less than half the national average of 101 per 1,000.",
+    "subtitleColor": "#c5cfe0",
+    "subtitleFont": "Times New Roman",
+    "subtitleFontSize": 11
+  },
+  "width": 500,
+  "height": 280,
+  "background": "transparent",
+  "data": {
+    "url": "https://evalisii.github.io/FIT2179-A2/data/medicare_by_state.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#4393c3",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "y": {
+          "field": "state",
+          "type": "ordinal",
+          "sort": "-x",
+          "title": null,
+          "axis": {
+            "labelColor": "#c5cfe0",
+            "titleColor": "#c5cfe0",
+            "gridColor": "#4a6080",
+            "tickColor": "#4a6080",
+            "domainColor": "#4a6080",
+            "labelFont": "Times New Roman",
+            "titleFont": "Times New Roman",
+            "labelFontSize": 11
+          }
+        },
+        "x": {
+          "field": "patient_rate_per_1000",
+          "type": "quantitative",
+          "title": "Patients per 1,000 Population",
+          "axis": {
+            "labelColor": "#c5cfe0",
+            "titleColor": "#c5cfe0",
+            "gridColor": "#4a6080",
+            "tickColor": "#4a6080",
+            "domainColor": "#4a6080",
+            "labelFont": "Times New Roman",
+            "titleFont": "Times New Roman"
+          },
+          "scale": {
+            "domain": [
+              0,
+              120
+            ]
+          }
+        },
+        "x2": {
+          "datum": 0
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 120,
+        "color": "#2166ac"
+      },
+      "encoding": {
+        "y": {
+          "field": "state",
+          "type": "ordinal",
+          "sort": "-x"
+        },
+        "x": {
+          "field": "patient_rate_per_1000",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              120
+            ]
+          }
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "patient_rate_per_1000",
+            "type": "quantitative",
+            "title": "Rate per 1,000"
+          },
+          {
+            "field": "total_patients",
+            "type": "quantitative",
+            "title": "Total Patients",
+            "format": ","
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#d6604d",
+        "strokeDash": [
+          4,
+          2
+        ],
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {
+          "datum": 101
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 4,
+        "dy": -6,
+        "color": "#d6604d",
+        "font": "Times New Roman",
+        "fontSize": 10
+      },
+      "encoding": {
+        "x": {
+          "datum": 101
+        },
+        "y": {
+          "datum": "State of Western Australia"
+        },
+        "text": {
+          "value": "National avg: 101"
+        }
+      }
+    }
+  ],
+  "config": {
+    "background": "transparent",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#c5cfe0",
+      "titleColor": "#c5cfe0",
+      "gridColor": "#4a6080",
+      "tickColor": "#4a6080",
+      "domainColor": "#4a6080",
+      "labelFont": "Times New Roman",
+      "titleFont": "Times New Roman"
+    },
+    "legend": {
+      "labelColor": "#c5cfe0",
+      "titleColor": "#c5cfe0",
+      "labelFont": "Times New Roman",
+      "titleFont": "Times New Roman"
+    },
+    "title": {
+      "color": "#ffffff",
+      "font": "Times New Roman"
+    }
+  }
+}
