@@ -10,7 +10,6 @@
   },
   "width": 650,
   "height": 340,
-  "background": "transparent",
   "data": {
     "url": "https://evalisii.github.io/FIT2179-A2/data/medicare_vs_ed_trend.csv"
   },
@@ -20,7 +19,10 @@
         "type": "line",
         "color": "#2166ac",
         "strokeWidth": 2.5,
-        "point": {"color": "#2166ac", "filled": true}
+        "point": {
+          "color": "#2166ac",
+          "filled": true
+        }
       },
       "encoding": {
         "x": {
@@ -29,11 +31,6 @@
           "title": "Financial Year",
           "axis": {
             "labelAngle": -45,
-            "labelColor": "#c5cfe0",
-            "titleColor": "#c5cfe0",
-            "gridColor": "#4a6080",
-            "tickColor": "#4a6080",
-            "domainColor": "#4a6080",
             "labelFont": "Times New Roman",
             "titleFont": "Times New Roman"
           }
@@ -45,53 +42,95 @@
           "axis": {
             "titleColor": "#2166ac",
             "format": "~s",
-            "labelColor": "#c5cfe0",
-            "gridColor": "#4a6080",
-            "tickColor": "#4a6080",
-            "domainColor": "#4a6080",
             "labelFont": "Times New Roman",
             "titleFont": "Times New Roman"
           }
         },
         "tooltip": [
-          {"field": "year", "type": "ordinal", "title": "Year"},
-          {"field": "total_patients", "type": "quantitative", "title": "Medicare Patients", "format": ","},
-          {"field": "ed_presentations", "type": "quantitative", "title": "ED Presentations", "format": ","}
+          {
+            "field": "year",
+            "type": "ordinal",
+            "title": "Year"
+          },
+          {
+            "field": "total_patients",
+            "type": "quantitative",
+            "title": "Medicare Patients",
+            "format": ","
+          },
+          {
+            "field": "ed_presentations",
+            "type": "quantitative",
+            "title": "ED Presentations",
+            "format": ","
+          }
         ]
       }
     },
     {
       "mark": {
         "type": "line",
-        "color": "#d6604d",
+        "color": "#92c5de",
         "strokeWidth": 2.5,
-        "strokeDash": [6, 3],
-        "point": {"color": "#d6604d", "filled": true}
+        "strokeDash": [
+          6,
+          3
+        ],
+        "point": {
+          "color": "#92c5de",
+          "filled": true
+        }
       },
       "encoding": {
-        "x": {"field": "year", "type": "ordinal"},
+        "x": {
+          "field": "year",
+          "type": "ordinal"
+        },
         "y": {
           "field": "ed_presentations",
           "type": "quantitative",
           "title": "ED Mental Health Presentations",
           "axis": {
-            "titleColor": "#d6604d",
+            "titleColor": "#92c5de",
             "format": "~s",
-            "labelColor": "#c5cfe0",
-            "gridColor": "#4a6080",
-            "tickColor": "#4a6080",
-            "domainColor": "#4a6080",
             "labelFont": "Times New Roman",
             "titleFont": "Times New Roman"
           }
         }
       }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "font": "Times New Roman",
+        "fontSize": 10,
+        "fontStyle": "italic",
+        "color": "#d6604d"
+      },
+      "encoding": {
+        "x": {
+          "datum": "2023-24"
+        },
+        "y": {
+          "datum": 2800000
+        },
+        "text": {
+          "value": "Note: axes use different scales"
+        }
+      }
     }
   ],
-  "resolve": {"scale": {"y": "independent"}},
+  "resolve": {
+    "scale": {
+      "y": "independent"
+    }
+  },
   "config": {
     "background": "transparent",
-    "view": {"stroke": null},
+    "view": {
+      "stroke": null
+    },
     "axis": {
       "labelColor": "#c5cfe0",
       "titleColor": "#c5cfe0",
@@ -111,5 +150,6 @@
       "color": "#ffffff",
       "font": "Times New Roman"
     }
-  }
+  },
+  "background": "transparent"
 }

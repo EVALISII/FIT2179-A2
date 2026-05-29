@@ -53,10 +53,10 @@ h1 {
 }
 
 .section-title {
-  font-size: 0.85rem;
+  font-size: 1.1rem;
   color: #92c5de;
-  font-weight: normal;
-  letter-spacing: 0.1em;
+  font-weight: bold;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
@@ -122,4 +122,16 @@ footer {
   font-size: 0.75rem;
   color: #4a6080;
   line-height: 1.6;
+}
+
+
+/* ===== CENTERED SECTION ===== */
+section.centered {
+  align-items: center;
+  text-align: center;
+}
+
+section.centered p {
+  text-align: left;
+  max-width: 750px;
 }
