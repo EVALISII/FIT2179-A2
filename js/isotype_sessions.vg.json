@@ -1,0 +1,357 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Average Sessions per Patient by Provider Type (2023-24)",
+    "fontSize": 15,
+    "fontWeight": "bold",
+    "font": "Times New Roman",
+    "anchor": "middle",
+    "color": "#ffffff",
+    "subtitle": "Each icon represents 0.5 sessions. Filled icons show average sessions per patient.",
+    "subtitleColor": "#c5cfe0",
+    "subtitleFont": "Times New Roman",
+    "subtitleFontSize": 11
+  },
+  "background": "transparent",
+  "width": 380,
+  "height": 220,
+  "data": {
+    "values": [
+      {
+        "provider": "Clinical psychologists",
+        "services_per_patient": 5.0,
+        "status": "filled"
+      },
+      {
+        "provider": "Clinical psychologists",
+        "services_per_patient": 5.0,
+        "status": "filled"
+      },
+      {
+        "provider": "Clinical psychologists",
+        "services_per_patient": 5.0,
+        "status": "filled"
+      },
+      {
+        "provider": "Clinical psychologists",
+        "services_per_patient": 5.0,
+        "status": "filled"
+      },
+      {
+        "provider": "Clinical psychologists",
+        "services_per_patient": 5.0,
+        "status": "filled"
+      },
+      {
+        "provider": "Clinical psychologists",
+        "services_per_patient": 5.0,
+        "status": "filled"
+      },
+      {
+        "provider": "Clinical psychologists",
+        "services_per_patient": 5.0,
+        "status": "filled"
+      },
+      {
+        "provider": "Clinical psychologists",
+        "services_per_patient": 5.0,
+        "status": "filled"
+      },
+      {
+        "provider": "Clinical psychologists",
+        "services_per_patient": 5.0,
+        "status": "filled"
+      },
+      {
+        "provider": "Clinical psychologists",
+        "services_per_patient": 5.0,
+        "status": "filled"
+      },
+      {
+        "provider": "Psychiatrists",
+        "services_per_patient": 4.8,
+        "status": "filled"
+      },
+      {
+        "provider": "Psychiatrists",
+        "services_per_patient": 4.8,
+        "status": "filled"
+      },
+      {
+        "provider": "Psychiatrists",
+        "services_per_patient": 4.8,
+        "status": "filled"
+      },
+      {
+        "provider": "Psychiatrists",
+        "services_per_patient": 4.8,
+        "status": "filled"
+      },
+      {
+        "provider": "Psychiatrists",
+        "services_per_patient": 4.8,
+        "status": "filled"
+      },
+      {
+        "provider": "Psychiatrists",
+        "services_per_patient": 4.8,
+        "status": "filled"
+      },
+      {
+        "provider": "Psychiatrists",
+        "services_per_patient": 4.8,
+        "status": "filled"
+      },
+      {
+        "provider": "Psychiatrists",
+        "services_per_patient": 4.8,
+        "status": "filled"
+      },
+      {
+        "provider": "Psychiatrists",
+        "services_per_patient": 4.8,
+        "status": "filled"
+      },
+      {
+        "provider": "Psychiatrists",
+        "services_per_patient": 4.8,
+        "status": "filled"
+      },
+      {
+        "provider": "Other allied health",
+        "services_per_patient": 4.7,
+        "status": "filled"
+      },
+      {
+        "provider": "Other allied health",
+        "services_per_patient": 4.7,
+        "status": "filled"
+      },
+      {
+        "provider": "Other allied health",
+        "services_per_patient": 4.7,
+        "status": "filled"
+      },
+      {
+        "provider": "Other allied health",
+        "services_per_patient": 4.7,
+        "status": "filled"
+      },
+      {
+        "provider": "Other allied health",
+        "services_per_patient": 4.7,
+        "status": "filled"
+      },
+      {
+        "provider": "Other allied health",
+        "services_per_patient": 4.7,
+        "status": "filled"
+      },
+      {
+        "provider": "Other allied health",
+        "services_per_patient": 4.7,
+        "status": "filled"
+      },
+      {
+        "provider": "Other allied health",
+        "services_per_patient": 4.7,
+        "status": "filled"
+      },
+      {
+        "provider": "Other allied health",
+        "services_per_patient": 4.7,
+        "status": "filled"
+      },
+      {
+        "provider": "Other allied health",
+        "services_per_patient": 4.7,
+        "status": "empty"
+      },
+      {
+        "provider": "Other psychologists",
+        "services_per_patient": 4.5,
+        "status": "filled"
+      },
+      {
+        "provider": "Other psychologists",
+        "services_per_patient": 4.5,
+        "status": "filled"
+      },
+      {
+        "provider": "Other psychologists",
+        "services_per_patient": 4.5,
+        "status": "filled"
+      },
+      {
+        "provider": "Other psychologists",
+        "services_per_patient": 4.5,
+        "status": "filled"
+      },
+      {
+        "provider": "Other psychologists",
+        "services_per_patient": 4.5,
+        "status": "filled"
+      },
+      {
+        "provider": "Other psychologists",
+        "services_per_patient": 4.5,
+        "status": "filled"
+      },
+      {
+        "provider": "Other psychologists",
+        "services_per_patient": 4.5,
+        "status": "filled"
+      },
+      {
+        "provider": "Other psychologists",
+        "services_per_patient": 4.5,
+        "status": "filled"
+      },
+      {
+        "provider": "Other psychologists",
+        "services_per_patient": 4.5,
+        "status": "filled"
+      },
+      {
+        "provider": "Other psychologists",
+        "services_per_patient": 4.5,
+        "status": "empty"
+      },
+      {
+        "provider": "General practitioners",
+        "services_per_patient": 1.6,
+        "status": "filled"
+      },
+      {
+        "provider": "General practitioners",
+        "services_per_patient": 1.6,
+        "status": "filled"
+      },
+      {
+        "provider": "General practitioners",
+        "services_per_patient": 1.6,
+        "status": "filled"
+      },
+      {
+        "provider": "General practitioners",
+        "services_per_patient": 1.6,
+        "status": "empty"
+      },
+      {
+        "provider": "General practitioners",
+        "services_per_patient": 1.6,
+        "status": "empty"
+      },
+      {
+        "provider": "General practitioners",
+        "services_per_patient": 1.6,
+        "status": "empty"
+      },
+      {
+        "provider": "General practitioners",
+        "services_per_patient": 1.6,
+        "status": "empty"
+      },
+      {
+        "provider": "General practitioners",
+        "services_per_patient": 1.6,
+        "status": "empty"
+      },
+      {
+        "provider": "General practitioners",
+        "services_per_patient": 1.6,
+        "status": "empty"
+      },
+      {
+        "provider": "General practitioners",
+        "services_per_patient": 1.6,
+        "status": "empty"
+      }
+    ]
+  },
+  "transform": [
+    {
+      "calculate": "datum.status === 'filled' ? '\ud83d\ude37' : '\ud83e\udee5'",
+      "as": "emoji"
+    },
+    {
+      "window": [
+        {
+          "op": "rank",
+          "as": "rank"
+        }
+      ],
+      "groupby": [
+        "provider",
+        "status"
+      ]
+    }
+  ],
+  "mark": {
+    "type": "text",
+    "baseline": "middle"
+  },
+  "encoding": {
+    "x": {
+      "field": "rank",
+      "type": "ordinal",
+      "axis": null
+    },
+    "y": {
+      "field": "status",
+      "type": "nominal",
+      "axis": null,
+      "sort": [
+        "filled",
+        "empty"
+      ]
+    },
+    "row": {
+      "field": "provider",
+      "sort": [
+        "Clinical psychologists",
+        "Psychiatrists",
+        "Other allied health",
+        "Other psychologists",
+        "General practitioners"
+      ],
+      "header": {
+        "title": "",
+        "labelColor": "#c5cfe0",
+        "labelFont": "Times New Roman",
+        "labelFontSize": 12,
+        "labelOrient": "left",
+        "labelAlign": "left"
+      }
+    },
+    "text": {
+      "field": "emoji",
+      "type": "nominal"
+    },
+    "size": {
+      "value": 22
+    },
+    "tooltip": [
+      {
+        "field": "provider",
+        "type": "nominal",
+        "title": "Provider"
+      },
+      {
+        "field": "services_per_patient",
+        "type": "quantitative",
+        "title": "Avg Sessions per Patient"
+      }
+    ]
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": "transparent",
+    "title": {
+      "color": "#ffffff",
+      "font": "Times New Roman"
+    }
+  }
+}

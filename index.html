@@ -12,103 +12,139 @@
 <body>
 
   <header>
-    <h1>The Underlying Crisis</h1>
-    <p class="subtitle">Understanding Mental Health & Disability across Australia</p>
+    <h1>The Hidden Crisis</h1>
+    <p class="subtitle">Understanding Mental Health Services Across Australia</p>
+    <p class="intro">
+      Mental health is one of Australia's most pressing public health challenges. Every year, millions of Australians access mental health services through Medicare, yet emergency departments continue to see record numbers of crisis presentations. This visualisation explores a decade of data — who is seeking help, how the system is responding, and where the gaps remain.
+    </p>
   </header>
 
   <main>
 
+    <!-- SECTION 1: THE SCALE -->
+    <section class="section-header">
+      <h2 class="section-title">Part 1 — The Scale of the Problem</h2>
+    </section>
+
     <section>
       <h2>A decade of growing demand</h2>
-      <p>Medicare mental health services have grown steadily since 2014, peaking sharply during the COVID-19 pandemic before plateauing in recent years.</p>
+      <p>The number of Australians accessing Medicare mental health services has grown by over 30% since 2014, reaching 2.7 million patients in 2023-24. Demand surged sharply during the COVID-19 pandemic in 2020-21, when the national rate hit a record 112 patients per 1,000 people — driven by isolation, anxiety, and the sudden shift to telehealth. Since then, rates have plateaued, suggesting the system may be approaching capacity rather than demand falling.</p>
       <div class="chart-card">
         <div id="line_chart"></div>
       </div>
     </section>
 
     <section>
-      <h2>Which age groups have driven the decade of growth?</h2>
-      <p>The 18-24 age group saw the sharpest rise during COVID-19 in 2020-21, reaching 178 patients per 1,000 — nearly double the rate of 55-64 year olds in the same year.</p>
+      <h2>Where is the burden highest?</h2>
+      <p>Mental health service access is not evenly distributed across Australia. Victoria records the highest patient rate per capita despite not having the largest population, suggesting stronger service infrastructure. The Northern Territory has the lowest rate at just 56 per 1,000 — less than half the national average — likely reflecting a combination of geographic barriers, workforce shortages, and cultural factors that limit access in remote communities.</p>
       <div class="chart-card">
-        <div id="heatmap"></div>
+        <div id="bubble_map"></div>
       </div>
     </section>
 
-    <section>
-      <h2>Who is seeking help?</h2>
-      <p>Women aged 18-34 access Medicare mental health services at nearly double the rate of men in the same age group, highlighting significant gender differences in help-seeking behaviour.</p>
-      <div class="chart-card">
-        <div id="bar_chart_age_sex"></div>
+    <!-- SECTION 2: WHO IS SEEKING HELP -->
+    <section class="section-header">
+      <h2 class="section-title">Part 2 — Who is Seeking Help?</h2>
+    </section>
+
+    <section class="two-col">
+      <div>
+        <h2>Which age groups have driven growth?</h2>
+        <p>Young Australians aged 18-24 have seen the steepest rise in mental health service use over the past decade, reaching rates nearly double those of older age groups by 2020-21. The 12-17 age group also shows significant growth, raising concerns about youth mental health. Notably, the 35-44 age group — often managing career and family pressures simultaneously — has consistently maintained one of the highest rates across all years.</p>
+        <div class="chart-card">
+          <div id="heatmap"></div>
+        </div>
+      </div>
+      <div>
+        <h2>The gender gap in help-seeking</h2>
+        <p>Women access Medicare mental health services at significantly higher rates than men across all working-age groups. The gap is most pronounced at ages 18-24, where women access services at nearly double the rate of men. This does not necessarily mean women have worse mental health outcomes — it may reflect a well-documented pattern where men are less likely to seek professional help, potentially leading to more severe presentations when crises do occur.</p>
+        <div class="chart-card">
+          <div id="bar_chart_age_sex"></div>
+        </div>
       </div>
     </section>
 
-    <section>
-      <h2>Which providers are Australians turning to?</h2>
-      <p>General practitioners remain the most common entry point for mental health care, though psychologists have seen the fastest growth over the past decade.</p>
-      <div class="chart-card">
-        <div id="provider_trend"></div>
+    <!-- SECTION 3: THE SYSTEM -->
+    <section class="section-header">
+      <h2 class="section-title">Part 3 — How is the System Responding?</h2>
+    </section>
+
+    <section class="two-col">
+      <div>
+        <h2>Which providers are Australians turning to?</h2>
+        <p>General practitioners remain the dominant entry point for mental health care, seeing far more patients than any other provider type. However, psychologists — both clinical and other — have grown the fastest over the decade, reflecting the expansion of the Better Access initiative. Psychiatrists see fewer patients overall but provide the most intensive ongoing care, as shown by their high sessions-per-patient ratio.</p>
+        <div class="chart-card">
+          <div id="provider_trend"></div>
+        </div>
+      </div>
+      <div>
+        <h2>Who provides ongoing care vs one-off consultations?</h2>
+        <p>Not all provider visits are equal. GPs see patients for mental health on average just 1.6 times — functioning largely as a referral gateway rather than ongoing treatment. Clinical psychologists provide the most intensive care at an average of 5 sessions per patient, reflecting their role in evidence-based therapies like cognitive behavioural therapy. This distinction matters: high GP patient volumes mask the fact that most Australians receive only brief mental health contact.</p>
+        <div class="chart-card">
+          <div id="isotype"></div>
+        </div>
       </div>
     </section>
 
     <section>
       <h2>Is demand consistent throughout the year?</h2>
-      <p>Mental health service demand remains relatively stable across quarters, with a slight dip in the April-June quarter across most provider types.</p>
+      <p>Mental health service demand remains relatively stable across quarters, with a slight but consistent dip in the April-June quarter across most provider types. General practitioners show the sharpest seasonal variation, while psychologists maintain steadier caseloads throughout the year. This stability suggests mental health need is chronic rather than seasonal — unlike flu or other conditions with clear seasonal peaks.</p>
       <div class="chart-card">
         <div id="seasonal"></div>
       </div>
     </section>
 
+    <!-- SECTION 4: THE CRISIS -->
+    <section class="section-header">
+      <h2 class="section-title">Part 4 — Where the System is Failing</h2>
+    </section>
+
     <section>
       <h2>More services, more emergencies</h2>
-      <p>Despite record Medicare mental health services, emergency department presentations for mental health have also risen, suggesting the system is not reducing crisis-level need.</p>
+      <p>Despite record Medicare mental health service volumes, emergency department presentations for mental health conditions have risen in parallel — not fallen. This is the clearest evidence that expanding Medicare access alone is not sufficient to reduce crisis-level presentations. Between 2014 and 2024, ED presentations grew by over 60%, outpacing population growth. The system is treating more people, but not preventing the most severe episodes.</p>
       <div class="chart-card">
         <div id="medicare_vs_ed"></div>
       </div>
     </section>
 
-    <section>
-      <h2>The urgency is escalating</h2>
-      <p>The proportion of the most urgent mental health ED presentations — resuscitation and emergency has grown steadily since 2014, indicating more severe presentations over time.</p>
-      <div class="chart-card">
-        <div id="ed_triage"></div>
+    <section class="two-col">
+      <div>
+        <h2>The urgency is escalating</h2>
+        <p>Not only are more people presenting to emergency departments — they are arriving in more critical condition. The proportion of the most urgent triage categories (Resuscitation and Emergency) has grown steadily since 2014. In 2023-24, resuscitation-level mental health presentations reached over 6,000 — more than triple the 2014 figure of 1,995. This points to a system where people are not getting help early enough, resulting in more severe crises.</p>
+        <div class="chart-card">
+          <div id="ed_triage"></div>
+        </div>
+      </div>
+      <div>
+        <h2>What conditions drive people to emergency departments?</h2>
+        <p>Mood disorders — including depression and bipolar disorder — account for the largest share of mental health ED presentations, followed closely by anxiety and stress-related conditions. Schizophrenia and psychosis-related disorders, while affecting fewer people overall, generate a disproportionately high ED burden due to the acute nature of psychotic episodes. Substance use disorders also feature prominently, reflecting the strong link between mental health and drug and alcohol conditions.</p>
+        <div class="chart-card">
+          <div id="ed_diagnosis"></div>
+        </div>
       </div>
     </section>
 
-    <section>
-      <h2>What conditions drive people to emergency departments?</h2>
-      <p>Mood disorders and anxiety-related conditions account for the largest share of mental health ED presentations, followed by schizophrenia and psychosis-related disorders.</p>
-      <div class="chart-card">
-        <div id="ed_diagnosis"></div>
-      </div>
+    <!-- SECTION 5: THE MONEY -->
+    <section class="section-header">
+      <h2 class="section-title">Part 5 — Who is Paying?</h2>
     </section>
 
     <section>
       <h2>Who is paying for mental health?</h2>
-      <p>Federal and state government funding has grown substantially over the decade, though mental health spending still represents a small fraction of total health expenditure.</p>
+      <p>Federal and state government funding for mental health services has grown substantially over the decade, collectively exceeding $12 billion in 2023-24. The Australian Government is the largest funder, primarily through Medicare and the NDIS. However, despite this growth, mental health spending still represents only around 8% of total health expenditure — a figure advocates argue is inadequate given that mental illness accounts for nearly 13% of Australia's total disease burden.</p>
       <div class="chart-card">
         <div id="expenditure"></div>
       </div>
     </section>
 
-    <section>
-    <h2>How does patient volume compare across states?</h2>
-    <p>NSW and Victoria account for the largest total patient volumes, though Victoria has the highest rate per capita — suggesting stronger service access rather than simply larger population.</p>
-    <div class="chart-card">
-      <div id="bubble_map"></div>
-    </div>
+    <!-- SECTION 6: DIAGNOSIS PATTERNS -->
+    <section class="section-header">
+      <h2 class="section-title">Part 6 — Patterns in Community Care</h2>
     </section>
 
     <section>
-      <h2>Does demand shift across the year?</h2>
-      <p>Service demand dips in October to December across most provider types, with general practitioners showing the sharpest seasonal variation.</p>
-      <div class="chart-card">
-        <div id="radar"></div>
-      </div>
-    </section>
-
-    <section>
-      <h2>The gender gap in help-seeking</h2>
-      <p>Women aged 18-34 access Medicare mental health services at nearly double the rate of men — a pattern that holds consistently across all working-age groups.</p>
+      <h2>Which diagnoses define community mental health care?</h2>
+      <p>In community mental health settings, schizophrenia and psychosis-related disorders dominate contact volumes across all adult age groups — particularly for those aged 25-54. This reflects the chronic, relapsing nature of psychotic conditions that require sustained community support. Mood disorders are most prevalent among younger adults (18-34), while anxiety-related conditions are more evenly distributed across age groups. Notably, substance use disorders generate significant contact volumes among 18-44 year olds, highlighting the overlap between mental health and addiction services.</p>
       <div class="chart-card">
         <div id="arc"></div>
       </div>
@@ -117,23 +153,30 @@
   </main>
 
   <footer>
-    <p>Data sources: Australian Institute of Health and Welfare (AIHW) — Medicare Mental Health Services 2023-24; Mental Health Emergency Department Care 2023-24; Expenditure on Mental Health Services 2023-24 | Author: Joe Fraser | StudentID: 33159904 2026</p>
+    <div class="footer-content">
+      <p class="footer-conclusion">
+        Australia's mental health system is growing — but the data tells a more complex story. Record Medicare services have not reduced emergency department crises. Young Australians and women are disproportionately seeking help, yet men remain underserved. Funding is increasing, but remains below the level the disease burden demands. The hidden crisis is not just the prevalence of mental illness — it is the gap between what the system provides and what Australians need.
+      </p>
+      <p class="footer-meta">
+        Data sources: Australian Institute of Health and Welfare (AIHW) — Medicare Mental Health Services 2023-24; Mental Health Emergency Department Care 2023-24; Expenditure on Mental Health Services 2023-24; National Community Mental Health Care 2023-24 |
+        Author: Joe Fraser | Student ID: 33159904 | 2026 |
+        AI tools used for some code & text refinement (Claude, Anthropic)
+      </p>
+    </div>
   </footer>
 
   <script type="text/javascript">
-    vegaEmbed('#choropleth_map', 'js/choropleth_map.vg.json').catch(console.error);
     vegaEmbed('#line_chart', 'js/line_chart.vg.json').catch(console.error);
-    vegaEmbed('#bar_chart_age_sex', 'js/bar_chart_age_sex.vg.json').catch(console.error);
+    vegaEmbed('#bubble_map', 'js/bubble_map.vg.json').catch(console.error);
     vegaEmbed('#heatmap', 'js/heatmap_age_year.vg.json').catch(console.error);
+    vegaEmbed('#bar_chart_age_sex', 'js/bar_chart_age_sex.vg.json').catch(console.error);
     vegaEmbed('#provider_trend', 'js/medicare_provider_trend.vg.json').catch(console.error);
-    //vegaEmbed('#age_trend', 'js/medicare_age_trend.vg.json').catch(console.error); still in the making
+    vegaEmbed('#isotype', 'js/isotype_sessions.vg.json').catch(console.error);
     vegaEmbed('#seasonal', 'js/medicare_seasonal.vg.json').catch(console.error);
     vegaEmbed('#medicare_vs_ed', 'js/medicare_ed_comparison.vg.json').catch(console.error);
     vegaEmbed('#ed_triage', 'js/ed_triage.vg.json').catch(console.error);
     vegaEmbed('#ed_diagnosis', 'js/ed_diagnosis.vg.json').catch(console.error);
     vegaEmbed('#expenditure', 'js/expenditure_funding.vg.json').catch(console.error);
-    vegaEmbed('#bubble_map', 'js/bubble_map.vg.json').catch(console.error);
-    vegaEmbed('#radar', 'js/radar_chart.vg.json').catch(console.error);
     vegaEmbed('#arc', 'js/arc_diagram.vg.json').catch(console.error);
   </script>
 
