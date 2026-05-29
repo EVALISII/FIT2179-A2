@@ -18,7 +18,7 @@
     "type": "rect",
     "cornerRadius": 2,
     "stroke": "#0f1f38",
-    "strokeWidth": 2
+    "strokeWidth": 0.8
   },
   "encoding": {
     "x": {

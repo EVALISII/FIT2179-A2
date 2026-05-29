@@ -184,7 +184,7 @@
               "#2166ac",
               "#08519c",
               "#053061",
-              "#c5cfe0"
+              "#ffffff"
             ]
           },
           "legend": {
@@ -276,7 +276,7 @@
               "#2166ac",
               "#08519c",
               "#053061",
-              "#c5cfe0"
+              "#ffffff"
             ]
           }
         }
@@ -354,7 +354,8 @@
         "text": {
           "value": "NT (26.7): geographic isolation,"
         }
-      }
+      },
+      "transform": []
     },
     {
       "mark": {
@@ -375,7 +376,8 @@
         "text": {
           "value": "workforce shortages, remote access"
         }
-      }
+      },
+      "transform": []
     }
   ],
   "config": {
