@@ -15,7 +15,8 @@
   },
   "mark": {
     "type": "bar",
-    "cornerRadiusEnd": 3
+    "cornerRadiusEnd": 3,
+    "color": "#2166ac"
   },
   "encoding": {
     "y": {
@@ -36,25 +37,6 @@
         "labelFont": "Times New Roman",
         "titleFont": "Times New Roman"
       }
-    },
-    "color": {
-      "field": "presentations_2023_24",
-      "type": "quantitative",
-      "scale": {
-        "type": "threshold",
-        "domain": [
-          10000,
-          40000,
-          70000
-        ],
-        "range": [
-          "#fddbc7",
-          "#f4a582",
-          "#d6604d",
-          "#b2182b"
-        ]
-      },
-      "legend": null
     },
     "tooltip": [
       {
