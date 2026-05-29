@@ -8,7 +8,7 @@ body {
   font-family: Georgia, serif;
   background-color: #0f1f38;
   color: #c5cfe0;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 2rem;
 }
@@ -45,19 +45,18 @@ h1 {
   text-align: left;
 }
 
-/* ===== SECTION HEADERS ===== */
+/* ===== SECTION DIVIDERS ===== */
 .section-header {
-  margin-top: 3rem;
-  margin-bottom: 0.5rem;
-  padding-bottom: 0.75rem;
+  margin-top: 2rem;
+  padding-bottom: 0.6rem;
   border-bottom: 2px solid #2a3f6a;
 }
 
 .section-title {
-  font-size: 1.1rem;
+  font-size: 0.85rem;
   color: #92c5de;
   font-weight: normal;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
@@ -72,20 +71,7 @@ section {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-}
-
-/* ===== TWO COLUMN LAYOUT ===== */
-section.two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  align-items: start;
-}
-
-section.two-col > div {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+  width: 100%;
 }
 
 /* ===== TYPOGRAPHY ===== */
@@ -101,11 +87,7 @@ section p {
   line-height: 1.75;
   color: #c5cfe0;
   font-size: 0.92rem;
-  max-width: 680px;
-}
-
-section.two-col p {
-  max-width: 100%;
+  max-width: 750px;
 }
 
 /* ===== CHART CARDS ===== */
@@ -114,6 +96,8 @@ section.two-col p {
   border-radius: 8px;
   padding: 1.25rem;
   border: 1px solid #2a3f6a;
+  width: 100%;
+  overflow-x: auto;
 }
 
 /* ===== FOOTER ===== */
@@ -127,7 +111,7 @@ footer {
   font-size: 1rem;
   line-height: 1.8;
   color: #c5cfe0;
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto 1.5rem auto;
   text-align: center;
   font-style: italic;
@@ -138,19 +122,4 @@ footer {
   font-size: 0.75rem;
   color: #4a6080;
   line-height: 1.6;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 900px) {
-  section.two-col {
-    grid-template-columns: 1fr;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  body {
-    padding: 1rem;
-  }
 }
